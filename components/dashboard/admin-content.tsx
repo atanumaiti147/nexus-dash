@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -89,7 +89,7 @@ export function AdminContent() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <RefreshCw className="h-10 w-10 text-blue-500 animate-spin opacity-20" />
+        <RefreshCw className="h-10 w-10 text-red-500 animate-spin opacity-20" />
       </div>
     );
   }
@@ -105,11 +105,11 @@ export function AdminContent() {
     <div className="space-y-10 animate-in fade-in duration-500">
       {/* Header */}
       <div className="relative group">
-        <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-3xl blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
+        <div className="absolute -inset-1 bg-gradient-to-r from-red-500 to-indigo-500 rounded-3xl blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
         <div className="relative bg-[#0f172a] border border-white/10 rounded-3xl p-8 lg:p-12 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div className="flex items-center gap-6">
-            <div className="h-16 w-16 rounded-2xl bg-blue-500/20 flex items-center justify-center border border-blue-500/30 shadow-2xl shadow-blue-500/20">
-              <Shield className="h-8 w-8 text-blue-500" />
+            <div className="h-16 w-16 rounded-2xl bg-red-500/20 flex items-center justify-center border border-red-500/30 shadow-2xl shadow-red-500/20">
+              <Shield className="h-8 w-8 text-red-500" />
             </div>
             <div>
               <h1 className="text-4xl font-black text-white tracking-tight font-outfit">Admin Control Panel</h1>
@@ -118,10 +118,10 @@ export function AdminContent() {
           </div>
           <button 
             onClick={() => fetchData(true)}
-            className="flex items-center gap-3 bg-blue-500/5 px-6 py-3 rounded-2xl border border-blue-500/10 hover:bg-blue-500/10 transition-all active:scale-95 group/refresh"
+            className="flex items-center gap-3 bg-red-500/5 px-6 py-3 rounded-2xl border border-red-500/10 hover:bg-red-500/10 transition-all active:scale-95 group/refresh"
           >
-            <RefreshCw className={cn("h-4 w-4 text-blue-500 transition-all", refreshing && "animate-spin")} />
-            <span className="text-xs font-black uppercase tracking-widest text-blue-500">
+            <RefreshCw className={cn("h-4 w-4 text-red-500 transition-all", refreshing && "animate-spin")} />
+            <span className="text-xs font-black uppercase tracking-widest text-red-500">
               {refreshing ? "Refreshing..." : "Real-time Mode"}
             </span>
           </button>
@@ -132,7 +132,7 @@ export function AdminContent() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {statItems.map((stat) => (
           <div key={stat.name} className="glass border border-white/5 rounded-3xl p-6 hover:border-white/10 transition-all group">
-            <div className="flex items-center justify-between gap-3 mb-4">
+            <div className="flex items-center justify-between mb-4">
               <div className={cn("p-3 rounded-xl bg-white/[0.03] group-hover:scale-110 transition-transform", stat.color)}>
                 <stat.icon className="h-6 w-6" />
               </div>
@@ -149,20 +149,20 @@ export function AdminContent() {
       {/* System Status Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* API Health */}
-        <div className="lg:col-span-2 glass border border-white/5 rounded-3xl sm:rounded-[2.5rem] overflow-hidden">
-          <div className="p-5 sm:p-8 border-b border-white/5 flex items-center justify-between gap-3 bg-white/[0.01]">
+        <div className="lg:col-span-2 glass border border-white/5 rounded-[2.5rem] overflow-hidden">
+          <div className="p-8 border-b border-white/5 flex items-center justify-between bg-white/[0.01]">
             <div className="flex items-center gap-4">
-              <Activity className="h-5 w-5 text-blue-500" />
+              <Activity className="h-5 w-5 text-red-500" />
               <h3 className="text-lg font-bold text-white">System Nodes Status</h3>
             </div>
             <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">Auto-Polling Active</span>
           </div>
-          <div className="p-5 sm:p-8 space-y-6">
+          <div className="p-8 space-y-6">
             {stats?.nodes.map((node) => {
               const Icon = node.icon === "Globe" ? Globe : node.icon === "Database" ? Database : node.icon === "Cpu" ? Cpu : Lock;
               const isHealthy = node.status === "Healthy";
               return (
-                <div key={node.name} className="flex items-center justify-between gap-3 p-4 bg-white/[0.02] rounded-2xl border border-white/5 group hover:bg-white/[0.04] transition-all">
+                <div key={node.name} className="flex items-center justify-between p-4 bg-white/[0.02] rounded-2xl border border-white/5 group hover:bg-white/[0.04] transition-all">
                   <div className="flex items-center gap-4">
                     <div className="h-10 w-10 rounded-xl bg-slate-800 flex items-center justify-center group-hover:bg-slate-700 transition-colors">
                       <Icon className="h-5 w-5 text-slate-400" />
@@ -188,19 +188,19 @@ export function AdminContent() {
         </div>
 
         {/* Global Config */}
-        <div className="glass border border-white/5 rounded-3xl sm:rounded-[2.5rem] overflow-hidden flex flex-col">
-          <div className="p-5 sm:p-8 border-b border-white/5 flex items-center gap-4 bg-white/[0.01]">
+        <div className="glass border border-white/5 rounded-[2.5rem] overflow-hidden flex flex-col">
+          <div className="p-8 border-b border-white/5 flex items-center gap-4 bg-white/[0.01]">
             <Settings className="h-5 w-5 text-indigo-500" />
             <h3 className="text-lg font-bold text-white">Global Settings</h3>
           </div>
-          <div className="p-5 sm:p-8 flex-1 space-y-6">
+          <div className="p-8 flex-1 space-y-6">
             <div className="space-y-2">
               <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 pl-1">Maintenance Mode</label>
               <button 
                 onClick={handleToggleMaintenance}
                 disabled={saving}
                 className={cn(
-                  "w-full flex items-center justify-between gap-3 p-4 rounded-2xl border transition-all",
+                  "w-full flex items-center justify-between p-4 rounded-2xl border transition-all",
                   config?.maintenance_mode 
                     ? "bg-red-500/10 border-red-500/30 text-red-500" 
                     : "bg-white/[0.03] border-white/5 text-slate-300 hover:bg-white/[0.05]"
@@ -226,7 +226,7 @@ export function AdminContent() {
               <textarea 
                 value={notification}
                 onChange={(e) => setNotification(e.target.value)}
-                className="w-full h-32 bg-white/[0.03] border border-white/5 rounded-2xl p-4 text-xs font-medium text-slate-300 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all placeholder:text-slate-600"
+                className="w-full h-32 bg-white/[0.03] border border-white/5 rounded-2xl p-4 text-xs font-medium text-slate-300 focus:outline-none focus:ring-1 focus:ring-red-500/30 transition-all placeholder:text-slate-600"
                 placeholder="Message to display across all dashboards..."
               />
             </div>

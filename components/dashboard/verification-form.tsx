@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -60,10 +60,10 @@ export function VerificationForm({ initialConfig, channels, roles, guildId }: Ve
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
       <div className="lg:col-span-3 space-y-6">
-        <div className="bg-[#141B2D] border border-slate-800 rounded-3xl shadow-xl p-5 sm:p-8 space-y-8">
+        <div className="bg-[#141B2D] border border-slate-800 rounded-3xl shadow-xl p-8 space-y-8">
           
           {/* Main Toggle */}
-          <div className="flex items-center justify-between gap-3 p-4 sm:p-6 bg-slate-900/40 rounded-2xl border border-slate-800">
+          <div className="flex items-center justify-between p-6 bg-slate-900/40 rounded-2xl border border-slate-800">
             <div>
               <h3 className="text-lg font-black text-white">Verification System</h3>
               <p className="text-sm text-slate-400 mt-1">Enable or disable server verification.</p>

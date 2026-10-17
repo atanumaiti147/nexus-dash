@@ -7,14 +7,14 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
  * ╚══════════════════════════════════════════════════════════════════╝
  */
 
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 
@@ -26,24 +26,7 @@ const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 const brandName = process.env.NEXT_PUBLIC_BRAND_NAME || "Nexus";
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 5,
-  viewportFit: "cover",
-  themeColor: "#020617",
-};
-
-function getMetadataBase() {
-  try {
-    return new URL(process.env.NEXTAUTH_URL || "http://localhost:3000");
-  } catch {
-    return undefined;
-  }
-}
-
 export const metadata: Metadata = {
-  metadataBase: getMetadataBase(),
   title: `${brandName} - Ultimate Discord Bot`,
   description: "Advanced Discord community management and security.",
 };

@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -72,7 +72,7 @@ export function WelcomeForm({ initialConfig, channels, guildId }: WelcomeFormPro
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
       <div className="lg:col-span-2 space-y-6">
-        <div className="bg-[#141B2D] border border-slate-800 rounded-3xl shadow-xl p-5 sm:p-8 space-y-6">
+        <div className="bg-[#141B2D] border border-slate-800 rounded-3xl shadow-xl p-8 space-y-6">
           <div className="space-y-4">
             <div>
               <label className="text-xs font-black uppercase text-slate-500 tracking-widest pl-1">Response Type</label>

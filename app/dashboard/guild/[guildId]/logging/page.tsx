@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -24,7 +24,7 @@ import { api } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 
 const LoggingForm = dynamic(() => import("@/components/dashboard/logging-form").then(mod => mod.LoggingForm), {
-  loading: () => <div className="h-96 w-full animate-pulse bg-slate-800/20 rounded-3xl sm:rounded-[40px]" />
+  loading: () => <div className="h-96 w-full animate-pulse bg-slate-800/20 rounded-[40px]" />
 });
 
 export default async function LoggingPage({ params }: { params: { guildId: string } }) {

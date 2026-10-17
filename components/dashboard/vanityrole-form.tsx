@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -84,7 +84,7 @@ export function VanityRoleForm({ initialSetups, channels, roles, guildId }: Vani
     <div className="space-y-8">
       
       {/* List Existing Ones */}
-      <div className="bg-[#141B2D] border border-slate-800 rounded-3xl shadow-xl p-5 sm:p-8">
+      <div className="bg-[#141B2D] border border-slate-800 rounded-3xl shadow-xl p-8">
         <h3 className="text-xl font-bold text-white mb-6">Active Vanity Roles</h3>
         
         {setups.length === 0 ? (
@@ -99,7 +99,7 @@ export function VanityRoleForm({ initialSetups, channels, roles, guildId }: Vani
               const c = channels.find(ch => ch.id.toString() === setup.log_channel_id?.toString());
               return (
                 <div key={idx} className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 relative group">
-                  <div className="flex items-center justify-between gap-3 mb-4">
+                  <div className="flex items-center justify-between mb-4">
                     <h4 className="font-bold text-lg text-primary">{setup.vanity}</h4>
                     <Button 
                       variant="destructive" 
@@ -133,7 +133,7 @@ export function VanityRoleForm({ initialSetups, channels, roles, guildId }: Vani
       </div>
 
       {/* Add New Setup */}
-      <div className="bg-[#141B2D] border border-slate-800 rounded-3xl shadow-xl p-5 sm:p-8">
+      <div className="bg-[#141B2D] border border-slate-800 rounded-3xl shadow-xl p-8">
         <h3 className="text-xl font-bold text-white mb-6">Add New Vanity Role</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="space-y-3">

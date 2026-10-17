@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -40,10 +40,10 @@ export const MetricCard = ({
 }: MetricCardProps) => {
   return (
     <div className={cn(
-      "bg-[#141B2D] border border-slate-800 p-6 rounded-3xl relative overflow-hidden group hover:border-primary/50 transition-all duration-300 hover:-translate-y-0.5 shadow-xl hover:shadow-glow-blue shadow-black/20",
+      "bg-[#141B2D] border border-slate-800 p-6 rounded-3xl relative overflow-hidden group hover:border-primary/50 transition-all shadow-xl hover:shadow-primary/5 shadow-black/20",
       className
     )}>
-      <div className="flex items-center justify-between gap-3 relative z-10">
+      <div className="flex items-center justify-between relative z-10">
         <div>
           <p className="text-xs font-black uppercase text-slate-500 tracking-widest">{name}</p>
           <div className="flex items-baseline gap-2 mt-1">

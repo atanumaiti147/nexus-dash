@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -67,7 +67,7 @@ export default function InvitesPage({ params }: { params: { guildId: string } })
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <div className="lg:col-span-3 space-y-6">
-          <div className="bg-[#141B2D] border border-slate-800 rounded-3xl overflow-hidden shadow-xl p-5 sm:p-8 space-y-8">
+          <div className="bg-[#141B2D] border border-slate-800 rounded-3xl overflow-hidden shadow-xl p-8 space-y-8">
             
             {/* Stats Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -96,13 +96,13 @@ export default function InvitesPage({ params }: { params: { guildId: string } })
               </h4>
 
               {data.length === 0 ? (
-                <div className="text-center p-6 sm:p-10 lg:p-12 bg-slate-900/20 rounded-2xl border border-dashed border-slate-700">
+                <div className="text-center p-12 bg-slate-900/20 rounded-2xl border border-dashed border-slate-700">
                   <TrendingUp className="w-10 h-10 text-slate-600 mx-auto mb-3" />
                   <p className="text-sm text-slate-500">No invite data found yet.</p>
                 </div>
               ) : (
                 data.map((row, index) => (
-                  <div key={index} className="flex items-center justify-between gap-3 p-4 bg-slate-900/40 rounded-xl border border-slate-800 hover:bg-slate-800/50 transition-colors">
+                  <div key={index} className="flex items-center justify-between p-4 bg-slate-900/40 rounded-xl border border-slate-800 hover:bg-slate-800/50 transition-colors">
                     <div className="flex items-center gap-4">
                       <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-sm font-black border border-slate-700">
                         {index === 0 ? "🥇" : index === 1 ? "🥈" : index === 2 ? "🥉" : <span className="text-slate-500">#{index + 1}</span>}
@@ -125,7 +125,7 @@ export default function InvitesPage({ params }: { params: { guildId: string } })
                       </div>
                       <div className="text-right">
                         <div className="text-[10px] uppercase font-bold text-slate-500">Left</div>
-                        <div className="text-blue-400">{row.left}</div>
+                        <div className="text-red-400">{row.left}</div>
                       </div>
                       <div className="text-right">
                         <div className="text-[10px] uppercase font-bold text-slate-500">Fake</div>

@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -26,39 +26,39 @@ export default function TermsPage() {
     <div className="min-h-screen bg-[#020617] text-slate-200 font-sans">
       {/* Background Decor */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[40%] bg-blue-600/[0.03] blur-[120px] rounded-full" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[40%] bg-red-600/[0.03] blur-[120px] rounded-full" />
       </div>
 
-      <nav className="fixed top-0 w-full z-50 border-b border-white/[0.03] bg-[#020617]/80 backdrop-blur-3xl px-4 sm:px-6 h-20 flex items-center justify-between gap-3">
+      <nav className="fixed top-0 w-full z-50 border-b border-white/[0.03] bg-[#020617]/80 backdrop-blur-3xl px-6 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-4 group">
-          <div className="h-10 w-10 rounded-xl bg-blue-600 flex items-center justify-center group-hover:rotate-12 transition-transform">
+          <div className="h-10 w-10 rounded-xl bg-red-600 flex items-center justify-center group-hover:rotate-12 transition-transform">
             <Bot className="h-5 w-5 text-white" />
           </div>
-          <span className="text-xl font-bold text-white font-outfit uppercase tracking-tighter hidden sm:inline">{process.env.NEXT_PUBLIC_BRAND_NAME || "Nexus"} Engine</span>
+          <span className="text-xl font-bold text-white font-outfit uppercase tracking-tighter">{process.env.NEXT_PUBLIC_BRAND_NAME || "Nexus"} Engine</span>
         </Link>
         <Link href="/">
           <Button variant="ghost" className="text-slate-400 hover:text-white gap-2">
             <ChevronLeft className="h-4 w-4" />
-            <span className="hidden sm:inline">Back to Home</span><span className="sm:hidden">Home</span>
+            Back to Home
           </Button>
         </Link>
       </nav>
 
       <main className="relative z-10 pt-40 pb-32 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-[10px] font-black uppercase tracking-widest mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-[10px] font-black uppercase tracking-widest mb-8">
             <Scale className="h-3 w-3" />
             Neural Protocol v2.4
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-white font-outfit tracking-tighter uppercase mb-8 sm:mb-12 italic text-right">
-            Terms of <span className="text-blue-500 not-italic">Service.</span>
+          <h1 className="text-5xl md:text-7xl font-bold text-white font-outfit tracking-tighter uppercase mb-12 italic text-right">
+            Terms of <span className="text-red-500 not-italic">Service.</span>
           </h1>
 
-          <div className="glass border-white/5 rounded-3xl sm:rounded-[40px] p-10 md:p-16 space-y-12 bg-gradient-to-br from-white/[0.01] to-transparent">
+          <div className="glass border-white/5 rounded-[40px] p-10 md:p-16 space-y-12 bg-gradient-to-br from-white/[0.01] to-transparent">
             <section className="space-y-6">
               <div className="flex items-center gap-4 text-white">
-                <div className="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-500">
+                <div className="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-red-500">
                    <Terminal className="h-5 w-5" />
                 </div>
                 <h2 className="text-2xl font-bold font-outfit uppercase tracking-tight">Acceptance of Protocol</h2>
@@ -70,7 +70,7 @@ export default function TermsPage() {
 
             <section className="space-y-6">
               <div className="flex items-center gap-4 text-white">
-                <div className="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-500">
+                <div className="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-red-500">
                    <ShieldAlert className="h-5 w-5" />
                 </div>
                 <h2 className="text-2xl font-bold font-outfit uppercase tracking-tight">Usage Constraints</h2>
@@ -82,7 +82,7 @@ export default function TermsPage() {
 
             <section className="space-y-6">
               <div className="flex items-center gap-4 text-white">
-                <div className="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-500">
+                <div className="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-red-500">
                    <Cpu className="h-5 w-5" />
                 </div>
                 <h2 className="text-2xl font-bold font-outfit uppercase tracking-tight">API & Scaling</h2>

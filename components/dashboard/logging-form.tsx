@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -105,7 +105,7 @@ export function LoggingForm({ initialConfig, channels, guildId }: LoggingFormPro
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
       <div className="lg:col-span-3 space-y-4">
          {LOG_CATEGORIES.map((cat) => (
-            <div key={cat.id} className="bg-[#141B2D] border border-slate-800 p-5 sm:p-8 rounded-3xl sm:rounded-[40px] shadow-xl hover:border-primary/20 transition-all group">
+            <div key={cat.id} className="bg-[#141B2D] border border-slate-800 p-8 rounded-[40px] shadow-xl hover:border-primary/20 transition-all group">
                <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
                   <div className="flex items-start gap-5">
                      <div className="h-14 w-14 rounded-2xl bg-slate-800/50 flex items-center justify-center text-slate-400 group-hover:text-primary transition-colors border border-white/5 shrink-0">
@@ -152,7 +152,7 @@ export function LoggingForm({ initialConfig, channels, guildId }: LoggingFormPro
       </div>
 
       <div className="space-y-6">
-         <section className="bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-3xl sm:rounded-[40px] p-5 sm:p-8 relative overflow-hidden group">
+         <section className="bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-[40px] p-8 relative overflow-hidden group">
             <div className="absolute -right-4 -top-4 opacity-[0.03] group-hover:scale-110 transition-transform">
               <BellRing className="h-32 w-32 text-white" />
             </div>
@@ -175,17 +175,17 @@ export function LoggingForm({ initialConfig, channels, guildId }: LoggingFormPro
             </Button>
          </section>
 
-         <div className="bg-[#141B2D] border border-slate-800 rounded-3xl sm:rounded-[40px] p-5 sm:p-8 shadow-xl">
+         <div className="bg-[#141B2D] border border-slate-800 rounded-[40px] p-8 shadow-xl">
            <h3 className="text-xs font-black uppercase text-slate-500 tracking-[0.15em] mb-6 flex items-center gap-2">
              <ShieldAlert className="h-4 w-4 text-amber-500" />
              Audit Protection
            </h3>
            <div className="space-y-4">
-              <div className="flex items-center justify-between gap-3 p-3 bg-slate-900/40 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
+              <div className="flex items-center justify-between p-3 bg-slate-900/40 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
                  <span className="text-xs font-bold text-slate-400">Protect Roles</span>
                  <span className="bg-slate-800 text-slate-300 px-2 py-1 rounded-md text-[10px] font-black">{config.ignore_roles.length}</span>
               </div>
-              <div className="flex items-center justify-between gap-3 p-3 bg-slate-900/40 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
+              <div className="flex items-center justify-between p-3 bg-slate-900/40 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
                  <span className="text-xs font-bold text-slate-400">Secure Channels</span>
                  <span className="bg-slate-800 text-slate-300 px-2 py-1 rounded-md text-[10px] font-black">{config.ignore_channels.length}</span>
               </div>

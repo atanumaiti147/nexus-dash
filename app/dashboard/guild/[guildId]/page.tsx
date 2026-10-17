@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -31,7 +31,7 @@ import {
 
 export default function GuildOverviewPage({ params }: { params: { guildId: string } }) {
   const modules = [
-    { title: "Auto Moderation", desc: "Native AutoMod: spam, mentions, NSFW, profanity, scams and links.", icon: ShieldCheck, status: "Active" },
+    { title: "Auto Moderation", desc: "Anti-spam, bad words, and links protection.", icon: ShieldCheck, status: "Active" },
     { title: "Ticket System", desc: "Helpdesk for user support and inquiries.", icon: Ticket, status: "Configured" },
     { title: "Leveling", desc: "Gamify your community with XP and ranks.", icon: BarChart4, status: "Active" },
     { title: "Event Logging", desc: "Detailed audit logs for every server event.", icon: FileText, status: "Active" },
@@ -88,8 +88,8 @@ export default function GuildOverviewPage({ params }: { params: { guildId: strin
 
       {/* Integration Status Column */}
       <div className="space-y-8">
-        <section className="bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-3xl p-5 sm:p-8 relative overflow-hidden group">
-          <div className="absolute top-0 right-0 p-5 sm:p-8 opacity-10 group-hover:scale-125 transition-transform">
+        <section className="bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-3xl p-8 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-125 transition-transform">
             <Database className="h-48 w-48 text-white" />
           </div>
           <h2 className="text-2xl font-black text-white mb-2 italic tracking-tighter">Database Status</h2>
@@ -101,7 +101,7 @@ export default function GuildOverviewPage({ params }: { params: { guildId: strin
               { label: 'Sync Delay', value: '12ms', icon: Activity },
               { label: 'Region', value: 'Global Edges', icon: GlobalizationIcon }
             ].map((stat) => (stat.icon && 
-              <div key={stat.label} className="flex items-center justify-between gap-3 p-4 bg-black/20 backdrop-blur-md rounded-2xl border border-white/5">
+              <div key={stat.label} className="flex items-center justify-between p-4 bg-black/20 backdrop-blur-md rounded-2xl border border-white/5">
                 <div className="flex items-center gap-3">
                   <div className="h-8 w-8 bg-black/40 rounded-lg flex items-center justify-center text-primary">
                     <stat.icon className="h-4 w-4" />
@@ -114,7 +114,7 @@ export default function GuildOverviewPage({ params }: { params: { guildId: strin
           </div>
         </section>
 
-        <section className="bg-[#141B2D] border border-slate-800 rounded-3xl p-5 sm:p-8">
+        <section className="bg-[#141B2D] border border-slate-800 rounded-3xl p-8">
            <h2 className="text-xl font-bold text-white mb-6">Security Context</h2>
            <div className="flex items-center gap-6">
               <div className="h-20 w-20 rounded-full border-4 border-emerald-500/20 flex items-center justify-center relative shadow-[0_0_20px_rgba(16,185,129,0.1)]">

@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -105,9 +105,9 @@ export function ReactionRolesForm({ initialConfig, roles, guildId }: ReactionRol
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
       <div className="lg:col-span-3 space-y-6">
-        <div className="bg-[#141B2D] border border-slate-800 rounded-3xl shadow-xl p-5 sm:p-8 space-y-8">
+        <div className="bg-[#141B2D] border border-slate-800 rounded-3xl shadow-xl p-8 space-y-8">
           
-          <div className="flex items-center justify-between gap-3 p-4 sm:p-6 bg-slate-900/40 rounded-2xl border border-slate-800">
+          <div className="flex items-center justify-between p-6 bg-slate-900/40 rounded-2xl border border-slate-800">
             <div className="flex items-center gap-4">
               <div className="p-3 bg-primary/20 text-primary rounded-xl">
                 <BellRing className="w-5 h-5" />
@@ -187,7 +187,7 @@ export function ReactionRolesForm({ initialConfig, roles, guildId }: ReactionRol
 
             <div className="space-y-3">
               {config.roles.length === 0 ? (
-                <div className="text-center p-5 sm:p-8 bg-slate-900/20 rounded-2xl border border-dashed border-slate-700">
+                <div className="text-center p-8 bg-slate-900/20 rounded-2xl border border-dashed border-slate-700">
                   <p className="text-sm text-slate-500 italic">No reaction roles currently configured.</p>
                 </div>
               ) : (
@@ -195,7 +195,7 @@ export function ReactionRolesForm({ initialConfig, roles, guildId }: ReactionRol
                   const roleName = roles.find(r => r.id === rr.role_id.toString())?.name || "Unknown Role";
                   
                   return (
-                    <div key={idx} className="flex items-center justify-between gap-3 p-4 bg-slate-900/40 rounded-xl border border-slate-800">
+                    <div key={idx} className="flex items-center justify-between p-4 bg-slate-900/40 rounded-xl border border-slate-800">
                       <div className="flex items-center gap-6">
                         <div className="flex flex-col">
                           <span className="text-[10px] uppercase font-bold text-slate-500">Message ID</span>
@@ -215,7 +215,7 @@ export function ReactionRolesForm({ initialConfig, roles, guildId }: ReactionRol
                         size="sm" 
                         onClick={() => handleDelete(rr.message_id, rr.emoji)}
                         disabled={loadingAction}
-                        className="text-blue-400 hover:text-blue-300 hover:bg-blue-400/10 h-8 w-8 p-0"
+                        className="text-red-400 hover:text-red-300 hover:bg-red-400/10 h-8 w-8 p-0"
                       >
                         <Trash2 className="h-4 w-4" />
                       </Button>

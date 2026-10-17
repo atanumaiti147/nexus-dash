@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -65,11 +65,6 @@ export function GuildTabs({ guildId }: { guildId: string }) {
     }
   };
 
-  React.useEffect(() => {
-    const el = scrollContainerRef.current?.querySelector<HTMLElement>("[data-active='true']");
-    el?.scrollIntoView({ inline: "center", block: "nearest" });
-  }, [pathname]);
-
   const tabs: Tab[] = [
     { name: "Overview", href: `/dashboard/guild/${guildId}`, icon: Layers },
     { name: "Anti-Nuke", href: `/dashboard/guild/${guildId}/antinuke`, icon: Sword },
@@ -92,11 +87,11 @@ export function GuildTabs({ guildId }: { guildId: string }) {
   ].filter(tab => tab.href); // Filter out any undefined hrefs
 
   return (
-    <div className="relative group/tabs flex items-center w-full mb-6 sm:mb-8 sticky top-[80px] sm:top-[104px] z-20 transition-all duration-300">
+    <div className="relative group/tabs flex items-center w-full mb-8 sticky top-[64px] z-20 transition-all duration-300">
       {/* Scroll Arrows */}
       <button 
         onClick={() => scroll("left")}
-        className="hidden md:block absolute left-[-16px] z-30 p-2 rounded-full bg-slate-800 border border-slate-700 text-white shadow-xl opacity-0 group-hover/tabs:opacity-100 transition-opacity hover:bg-primary"
+        className="absolute left-[-16px] z-30 p-2 rounded-full bg-slate-800 border border-slate-700 text-white shadow-xl opacity-0 group-hover/tabs:opacity-100 transition-opacity hover:bg-primary"
       >
         <ChevronLeft className="h-4 w-4" />
       </button>
@@ -115,10 +110,9 @@ export function GuildTabs({ guildId }: { guildId: string }) {
               key={tab.name}
               href={tab.href}
               className="shrink-0"
-              data-active={isActive ? "true" : "false"}
             >
               <div className={cn(
-                "flex items-center gap-2 sm:gap-2.5 px-4 sm:px-6 py-2.5 rounded-[14px] text-[11px] font-black uppercase tracking-wider transition-all duration-500 whitespace-nowrap",
+                "flex items-center gap-2.5 px-6 py-2.5 rounded-[14px] text-[11px] font-black uppercase tracking-wider transition-all duration-500 whitespace-nowrap",
                 "hover:bg-slate-800/60 hover:text-white",
                 isActive 
                   ? "bg-primary text-white shadow-lg shadow-primary/30 ring-1 ring-white/10" 
@@ -137,7 +131,7 @@ export function GuildTabs({ guildId }: { guildId: string }) {
 
       <button 
         onClick={() => scroll("right")}
-        className="hidden md:block absolute right-[-16px] z-30 p-2 rounded-full bg-slate-800 border border-slate-700 text-white shadow-xl opacity-0 group-hover/tabs:opacity-100 transition-opacity hover:bg-primary"
+        className="absolute right-[-16px] z-30 p-2 rounded-full bg-slate-800 border border-slate-700 text-white shadow-xl opacity-0 group-hover/tabs:opacity-100 transition-opacity hover:bg-primary"
       >
         <ChevronRight className="h-4 w-4" />
       </button>

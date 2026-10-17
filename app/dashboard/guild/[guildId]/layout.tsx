@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -60,7 +60,7 @@ export default async function GuildLayout({
 
   if (error || !guild) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[400px] border-2 border-dashed border-red-500/20 rounded-3xl bg-red-500/5 p-6 sm:p-10 lg:p-12 text-center">
+      <div className="flex flex-col items-center justify-center min-h-[400px] border-2 border-dashed border-red-500/20 rounded-3xl bg-red-500/5 p-12 text-center">
         <ShieldAlert className="h-16 w-16 text-red-500 mb-6 opacity-50" />
         <h2 className="text-2xl font-bold text-white">Access Denied</h2>
         <p className="text-slate-400 mt-2 max-w-md">{error || "This guild does not exist or you do not have permission to manage it."}</p>
@@ -80,7 +80,7 @@ export default async function GuildLayout({
       </Link>
 
       {/* Guild Header */}
-      <div className="bg-[#141B2D] border border-slate-800 rounded-3xl p-5 sm:p-8 shadow-xl shadow-black/20">
+      <div className="bg-[#141B2D] border border-slate-800 rounded-3xl p-8 shadow-xl shadow-black/20">
         <div className="flex flex-col lg:flex-row lg:items-center gap-8">
           <div className="relative">
             {guild.icon ? (
@@ -89,10 +89,10 @@ export default async function GuildLayout({
                 alt={guild.name}
                 width={120}
                 height={120}
-                className="rounded-3xl border-4 border-slate-800 shadow-2xl h-20 w-20 sm:h-[120px] sm:w-[120px]"
+                className="rounded-3xl border-4 border-slate-800 shadow-2xl"
               />
             ) : (
-              <div className="h-20 w-20 sm:h-[120px] sm:w-[120px] bg-primary rounded-3xl flex items-center justify-center text-4xl font-bold text-white shadow-2xl border-4 border-slate-800">
+              <div className="h-[120px] w-[120px] bg-primary rounded-3xl flex items-center justify-center text-4xl font-bold text-white shadow-2xl border-4 border-slate-800">
                 {guild.name.charAt(0)}
               </div>
             )}
@@ -103,8 +103,8 @@ export default async function GuildLayout({
 
           <div className="flex-1 space-y-4">
             <div>
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                <h1 className="text-2xl sm:text-4xl font-black text-white tracking-tight">{guild.name}</h1>
+              <div className="flex items-center gap-3">
+                <h1 className="text-4xl font-black text-white tracking-tight">{guild.name}</h1>
                 <span className="px-3 py-1 bg-slate-800 rounded-lg text-[10px] uppercase font-black text-slate-500 tracking-tighter border border-white/5">
                   ID: {guildId}
                 </span>

@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -100,10 +100,10 @@ export default function AutoReactPage({ params }: { params: { guildId: string } 
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <div className="lg:col-span-3 space-y-6">
-          <div className="bg-[#141B2D] border border-slate-800 rounded-3xl overflow-hidden shadow-xl p-5 sm:p-8 space-y-6">
+          <div className="bg-[#141B2D] border border-slate-800 rounded-3xl overflow-hidden shadow-xl p-8 space-y-6">
             
             {config.triggers.length === 0 ? (
-              <div className="text-center p-6 sm:p-10 lg:p-12 bg-slate-900/20 rounded-2xl border border-dashed border-slate-700">
+              <div className="text-center p-12 bg-slate-900/20 rounded-2xl border border-dashed border-slate-700">
                 <Smile className="w-14 h-14 text-slate-600 mx-auto mb-4" />
                 <p className="text-lg font-medium text-slate-400">No triggers configured</p>
                 <p className="text-sm text-slate-500 mb-6">Start by adding your first auto-reaction trigger.</p>
@@ -115,7 +115,7 @@ export default function AutoReactPage({ params }: { params: { guildId: string } 
               <>
                 {config.triggers.map((item: any, index: number) => (
                   <div key={index} className="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl space-y-4 animate-in zoom-in-95 duration-200">
-                    <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div className="p-2.5 rounded-xl bg-yellow-500/10 text-yellow-500">
                           <Zap className="h-4 w-4" />

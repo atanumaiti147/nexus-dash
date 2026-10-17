@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -137,7 +137,7 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
       {editingCategory && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
            <div className="bg-[#141B2D] border border-slate-800 rounded-3xl w-full max-w-lg shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200">
-              <div className="p-4 sm:p-6 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3 bg-slate-900/50">
+              <div className="p-6 border-b border-slate-800 flex items-center justify-between bg-slate-900/50">
                 <h3 className="font-bold text-lg text-white flex items-center gap-2">
                    {isAdding ? <Plus className="h-5 w-5 text-primary" /> : <Edit3 className="h-5 w-5 text-primary" />}
                    {isAdding ? "Add Category" : "Edit Category"}
@@ -146,7 +146,7 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
                    <X className="h-5 w-5" />
                 </button>
               </div>
-              <div className="p-5 sm:p-8 space-y-6">
+              <div className="p-8 space-y-6">
                 <div className="space-y-2">
                    <label className="text-xs font-black uppercase text-slate-500 tracking-widest">Category Name</label>
                    <Input 
@@ -155,7 +155,7 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
                       placeholder="e.g. Bug Reports"
                    />
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className="text-xs font-black uppercase text-slate-500 tracking-widest">Emoji Icon</label>
                     <Input 
@@ -180,7 +180,7 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className="text-xs font-black uppercase text-slate-500 tracking-widest">Button Style</label>
                     <Select 
@@ -230,7 +230,7 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
       {editingEmbed && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
            <div className="bg-[#141B2D] border border-slate-800 rounded-3xl w-full max-w-xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200">
-              <div className="p-4 sm:p-6 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3 bg-slate-900/50">
+              <div className="p-6 border-b border-slate-800 flex items-center justify-between bg-slate-900/50">
                 <h3 className="font-bold text-lg text-white flex items-center gap-2">
                    <Edit3 className="h-5 w-5 text-primary" />
                    Customize Panel Appearance
@@ -239,7 +239,7 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
                    <X className="h-5 w-5" />
                 </button>
               </div>
-              <div className="p-5 sm:p-8 space-y-6 max-h-[70vh] overflow-y-auto custom-scrollbar">
+              <div className="p-8 space-y-6 max-h-[70vh] overflow-y-auto custom-scrollbar">
                 <div className="space-y-2">
                    <label className="text-xs font-black uppercase text-slate-500 tracking-widest">Embed Title</label>
                    <Input 
@@ -257,7 +257,7 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
                       className="h-24"
                    />
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className="text-xs font-black uppercase text-slate-500 tracking-widest">Color (Decimal)</label>
                     <Input 
@@ -300,7 +300,7 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Column: Stats & Setup */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="bg-[#141B2D] border border-slate-800 rounded-3xl p-5 sm:p-8 shadow-xl space-y-8">
+          <div className="bg-[#141B2D] border border-slate-800 rounded-3xl p-8 shadow-xl space-y-8">
             <div className="flex items-center gap-3">
               <div className="p-2.5 rounded-xl bg-primary/10 text-primary"><Settings2 className="h-5 w-5" /></div>
               <h3 className="text-xl font-bold text-white">Global Configuration</h3>
@@ -367,7 +367,7 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
 
           {/* Categories Section */}
           <section className="bg-[#141B2D] border border-slate-800 rounded-3xl overflow-hidden shadow-xl">
-            <div className="p-4 sm:p-6 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3 bg-slate-900/20">
+            <div className="p-6 border-b border-slate-800 flex items-center justify-between bg-slate-900/20">
               <div className="flex items-center gap-2">
                 <Tag className="h-5 w-5 text-primary" />
                 <h3 className="font-bold text-white">Ticket Categories</h3>
@@ -380,7 +380,7 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
             <div className="p-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {config.categories.map((cat, i) => (
-                  <div key={i} className="flex items-center justify-between gap-3 p-4 bg-slate-900/50 rounded-2xl border border-white/5 hover:border-primary/30 transition-all group">
+                  <div key={i} className="flex items-center justify-between p-4 bg-slate-900/50 rounded-2xl border border-white/5 hover:border-primary/30 transition-all group">
                     <div className="flex items-center gap-3">
                       <div className="h-10 w-10 rounded-xl bg-slate-800 flex items-center justify-center text-xl shadow-inner">
                         {cat.emoji || '📩'}
@@ -414,7 +414,7 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
         {/* Right Column: Stats & Configuration */}
         <div className="space-y-6">
           <div className="bg-[#141B2D] border border-slate-800 p-6 rounded-3xl group shadow-lg">
-              <div className="flex items-center justify-between gap-3 mb-4">
+              <div className="flex items-center justify-between mb-4">
                   <div className="p-3 bg-primary/10 rounded-2xl text-primary group-hover:scale-110 transition-transform">
                     <MessageSquare className="h-6 w-6" />
                   </div>

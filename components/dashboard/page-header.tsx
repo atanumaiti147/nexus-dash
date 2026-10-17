@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -33,9 +33,9 @@ export const PageHeader = ({
   className 
 }: PageHeaderProps) => {
   return (
-    <div className={cn("flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6 mb-6 sm:mb-8", className)}>
-      <div className="min-w-0">
-        <h1 className="text-2xl sm:text-3xl font-black text-white flex items-center gap-3 tracking-tight">
+    <div className={cn("flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8", className)}>
+      <div>
+        <h1 className="text-3xl font-black text-white flex items-center gap-3 tracking-tight">
           {Icon && <Icon className="h-8 w-8 text-primary shrink-0" />}
           {title}
         </h1>
@@ -46,7 +46,7 @@ export const PageHeader = ({
         )}
       </div>
       {children && (
-        <div className="flex flex-wrap items-center gap-3 sm:gap-4 [&>*]:max-w-full">
+        <div className="flex items-center gap-4">
           {children}
         </div>
       )}

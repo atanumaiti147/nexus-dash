@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -24,11 +24,7 @@ const AutomodForm = dynamic(() => import("@/components/dashboard/automod-form").
 });
 
 export default async function AutomodPage({ params }: { params: { guildId: string } }) {
-  const [config, channels, roles] = await Promise.all([
-    api.getAutomod(params.guildId),
-    api.getChannels(params.guildId),
-    api.getRoles(params.guildId),
-  ]);
+  const config = await api.getAutomod(params.guildId);
 
   if (!config) return null;
 
@@ -40,11 +36,11 @@ export default async function AutomodPage({ params }: { params: { guildId: strin
             <ShieldCheck className="h-6 w-6 text-primary" />
             Auto Moderation
           </h2>
-          <p className="text-slate-400 mt-1">Protect your community with native Discord AutoMod rules and smart filters.</p>
+          <p className="text-slate-400 mt-1">Protect your community with automated filter systems.</p>
         </div>
       </div>
 
-      <AutomodForm initialConfig={config} channels={channels} roles={roles} guildId={params.guildId} />
+      <AutomodForm initialConfig={config} guildId={params.guildId} />
     </div>
   );
 }

@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -26,7 +26,6 @@ import {
   LoggingConfig,
   PrefixUpdate,
   AutomodUpdate,
-  AutomodSaveResult,
   LevelingUpdate,
   LoggingUpdate,
   LeaderboardEntry,
@@ -108,8 +107,8 @@ export const api = {
     }),
 
   getAutomod: (guildId: string) => request<AutomodConfig>(`/guilds/${guildId}/automod`),
-  updateAutomod: (guildId: string, data: AutomodUpdate) => 
-    request<AutomodSaveResult>(`/guilds/${guildId}/automod`, {
+  updateAutomod: (guildId: string, data: Partial<AutomodConfig>) => 
+    request<{ status: string }>(`/guilds/${guildId}/automod`, {
       method: "PATCH",
       body: JSON.stringify(data),
     }),

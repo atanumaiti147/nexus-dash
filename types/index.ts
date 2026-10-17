@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -45,45 +45,13 @@ export interface PrefixConfig {
   prefix: string;
 }
 
-export interface AutomodEventInfo {
-  name: string;
-  description: string;
-  /** Enforced by a native Discord AutoMod rule created by the bot */
-  native: boolean;
-  /** Mute / Kick / Ban can be configured (otherwise the message is only blocked) */
-  punishable: boolean;
-  default_punishment: string;
-}
-
-/** Live state of a native rule in Discord */
-export type AutomodNativeState = "active" | "off" | "no_permission" | "unavailable";
-
 export interface AutomodConfig {
-  guild_id: string;
+  guild_id: number;
   enabled: boolean;
-  /** An event is enabled when it has an entry here */
   punishments: Record<string, string>;
-  ignored_roles: string[];
-  ignored_channels: string[];
-  logging_channel: string | null;
-  events: AutomodEventInfo[];
-  punishment_options: string[];
-  native_status: Record<string, AutomodNativeState>;
-}
-
-export interface AutomodUpdate {
-  enabled?: boolean;
-  punishments?: Record<string, string>;
-  ignored_roles?: string[];
-  ignored_channels?: string[];
-  logging_channel?: string | null;
-}
-
-export interface AutomodSaveResult {
-  status: string;
-  guild_id: string;
-  /** event -> created | updated | unchanged | removed | absent | no_permission | limit_reached | error */
-  native_sync: Record<string, string>;
+  ignored_roles: number[];
+  ignored_channels: number[];
+  logging_channel: number | null;
 }
 
 export interface TicketConfig {

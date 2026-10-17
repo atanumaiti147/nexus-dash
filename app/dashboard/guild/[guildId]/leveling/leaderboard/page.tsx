@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -94,7 +94,7 @@ export default function LeaderboardPage({ params }: { params: { guildId: string 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
          {leaderboard.slice(0, 3).map((user, i) => (
             <div key={user.user_id} className={cn(
-               "relative p-5 sm:p-8 rounded-3xl sm:rounded-[40px] border flex flex-col items-center text-center overflow-hidden transition-all hover:scale-[1.02]",
+               "relative p-8 rounded-[40px] border flex flex-col items-center text-center overflow-hidden transition-all hover:scale-[1.02]",
                i === 0 ? "bg-gradient-to-b from-amber-500/20 to-transparent border-amber-500/30 md:-translate-y-4 order-1 md:order-2" : 
                i === 1 ? "bg-gradient-to-b from-slate-300/10 to-transparent border-slate-500/20 order-2 md:order-1" : 
                "bg-gradient-to-b from-amber-800/20 to-transparent border-amber-900/20 order-3"
@@ -129,44 +129,44 @@ export default function LeaderboardPage({ params }: { params: { guildId: string 
       </div>
 
       {/* Main Leaderboard Table */}
-      <div className="bg-[#141B2D] border border-slate-800 rounded-3xl sm:rounded-[40px] overflow-hidden shadow-2xl">
+      <div className="bg-[#141B2D] border border-slate-800 rounded-[40px] overflow-hidden shadow-2xl">
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[480px] text-left">
+          <table className="w-full text-left">
             <thead>
               <tr className="border-b border-slate-800 bg-slate-900/30">
-                <th className="px-4 sm:px-8 py-4 sm:py-6 text-[10px] font-black uppercase text-slate-500 tracking-[0.2em]">Rank</th>
-                <th className="px-4 sm:px-8 py-4 sm:py-6 text-[10px] font-black uppercase text-slate-500 tracking-[0.2em]">User</th>
-                <th className="px-4 sm:px-8 py-4 sm:py-6 text-[10px] font-black uppercase text-slate-500 tracking-[0.2em]">Level</th>
-                <th className="px-4 sm:px-8 py-4 sm:py-6 text-[10px] font-black uppercase text-slate-500 tracking-[0.2em] text-right">Total XP</th>
+                <th className="px-8 py-6 text-[10px] font-black uppercase text-slate-500 tracking-[0.2em]">Rank</th>
+                <th className="px-8 py-6 text-[10px] font-black uppercase text-slate-500 tracking-[0.2em]">User</th>
+                <th className="px-8 py-6 text-[10px] font-black uppercase text-slate-500 tracking-[0.2em]">Level</th>
+                <th className="px-8 py-6 text-[10px] font-black uppercase text-slate-500 tracking-[0.2em] text-right">Total XP</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800/50">
               {filteredData.slice(3).map((entry, i) => (
                 <tr key={entry.user_id} className="group hover:bg-white/[0.02] transition-colors">
-                  <td className="px-4 sm:px-8 py-4 sm:py-6">
+                  <td className="px-8 py-6">
                     <span className="text-sm font-black text-slate-500 group-hover:text-white transition-colors">
                        #{i + 4}
                     </span>
                   </td>
-                  <td className="px-4 sm:px-8 py-4 sm:py-6">
+                  <td className="px-8 py-6">
                     <div className="flex items-center gap-4">
                        <div className="h-10 w-10 rounded-xl bg-slate-800/50 border border-slate-700/50 flex items-center justify-center">
                           <User className="h-5 w-5 text-slate-600" />
                        </div>
-                       <div className="flex flex-col min-w-0">
-                          <span className="text-sm font-bold text-slate-200 truncate max-w-[9rem] sm:max-w-none group-hover:text-white transition-colors">{entry.name}</span>
+                       <div className="flex flex-col">
+                          <span className="text-sm font-bold text-slate-200 group-hover:text-white transition-colors">{entry.name}</span>
                           <span className="text-[10px] text-slate-600 font-mono tracking-tighter">{entry.user_id}</span>
                        </div>
                     </div>
                   </td>
-                  <td className="px-4 sm:px-8 py-4 sm:py-6">
+                  <td className="px-8 py-6">
                     <div className="flex items-center gap-2">
                        <div className="px-3 py-1 bg-primary/10 rounded-lg border border-primary/20">
                           <span className="text-xs font-black text-primary italic">LVL {entry.level}</span>
                        </div>
                     </div>
                   </td>
-                  <td className="px-4 sm:px-8 py-4 sm:py-6 text-right">
+                  <td className="px-8 py-6 text-right">
                     <div className="flex items-center justify-end gap-2">
                        <TrendingUp className="h-3 w-3 text-emerald-500 opacity-50" />
                        <span className="text-sm font-black text-slate-200 tabular-nums">{entry.xp.toLocaleString()}</span>
@@ -177,7 +177,7 @@ export default function LeaderboardPage({ params }: { params: { guildId: string 
               
               {filteredData.length === 3 && (
                 <tr>
-                   <td colSpan={4} className="px-5 sm:px-8 py-12 sm:py-16 lg:py-20 text-center">
+                   <td colSpan={4} className="px-8 py-20 text-center">
                       <p className="text-slate-500 italic font-medium">No additional members ranked yet...</p>
                    </td>
                 </tr>
@@ -187,7 +187,7 @@ export default function LeaderboardPage({ params }: { params: { guildId: string 
         </div>
         
         {/* Pagination Overlay (Simulation) */}
-        <div className="p-4 sm:p-6 gap-3 flex-wrap border-t border-slate-800 bg-slate-900/20 flex items-center justify-between">
+        <div className="p-6 border-t border-slate-800 bg-slate-900/20 flex items-center justify-between">
            <p className="text-xs text-slate-500 font-medium">
              Showing <span className="text-white">{filteredData.length}</span> active competitors
            </p>

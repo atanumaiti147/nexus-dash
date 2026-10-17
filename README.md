@@ -17,7 +17,7 @@
   <a href="https://nextjs.org"><img src="https://img.shields.io/badge/Next.js-14+-000000?style=for-the-badge&logo=nextdotjs&logoColor=white"/></a>
   <a href="https://typescriptlang.org"><img src="https://img.shields.io/badge/TypeScript-5+-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/></a>
   <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-3b82f6?style=for-the-badge"/></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-red?style=for-the-badge"/></a>
 </p>
 <p>
   <a href="https://discord.gg/JEqXrAurYz"><img src="https://img.shields.io/badge/Discord-Join_Server-5865F2?style=for-the-badge&logo=discord&logoColor=white"/></a>
@@ -112,7 +112,7 @@ DISCORD_CLIENT_SECRET         = your_discord_oauth_client_secret
 # ── Branding ──────────────────────────────────────────────────────
 NEXT_PUBLIC_ADMIN_IDS         = your_discord_user_id
 NEXT_PUBLIC_BRAND_NAME        = "Nexus"
-NEXT_PUBLIC_BRAND_NAME_WORD   = "ZX"
+NEXT_PUBLIC_BRAND_NAME_WORD   = "NX"
 ```
 
 ### 3 — Run locally
@@ -137,7 +137,7 @@ Open [http://localhost:3000](http://localhost:3000)
 | `DISCORD_CLIENT_SECRET` | Discord OAuth2 client secret |
 | `NEXT_PUBLIC_ADMIN_IDS` | Comma-separated Discord user IDs with admin panel access |
 | `NEXT_PUBLIC_BRAND_NAME` | Bot name shown in the dashboard UI |
-| `NEXT_PUBLIC_BRAND_NAME_WORD` | Short abbreviation shown in the dashboard (e.g. `ZX`) |
+| `NEXT_PUBLIC_BRAND_NAME_WORD` | Short abbreviation shown in the dashboard (e.g. `NX`) |
 
 ---
 
@@ -211,8 +211,6 @@ This URL is permanent — it never changes between restarts as long as the Cloud
 ## ✦ Nexus
 
 *Built for protection. Designed for style.*
-
-<a href="https://discord.gg/JEqXrAurYz"><img src="https://discord.com/api/guilds/1301573144817045524/widget.png?style=banner2" alt="Nexus Development Discord Server" width="480"/></a>
 
 <p>
   <a href="https://discord.gg/JEqXrAurYz"><img src="https://img.shields.io/badge/Discord-Join_Server-5865F2?style=for-the-badge&logo=discord&logoColor=white"/></a>

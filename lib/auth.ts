@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -18,9 +18,6 @@ import DiscordProvider from "next-auth/providers/discord";
 import { AuthOptions } from "next-auth";
 
 export const authOptions: AuthOptions = {
-  secret: process.env.NEXTAUTH_SECRET,
-  // Set NEXTAUTH_DEBUG=true on the server to see the exact OAuth failure reason in logs
-  debug: process.env.NEXTAUTH_DEBUG === "true",
   providers: [
     DiscordProvider({
       clientId: process.env.DISCORD_CLIENT_ID || "",

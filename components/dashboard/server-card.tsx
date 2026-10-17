@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -40,10 +40,10 @@ export const ServerCard = ({
 }: ServerCardProps) => {
   return (
     <div className={cn(
-      "bg-[#141B2D] border border-slate-800 rounded-3xl sm:rounded-[40px] group hover:border-primary/50 transition-all duration-500 hover:-translate-y-1 overflow-hidden shadow-2xl hover:shadow-glow-blue shadow-black/40 h-full flex flex-col",
+      "bg-[#141B2D] border border-slate-800 rounded-[40px] group hover:border-primary/50 transition-all duration-500 overflow-hidden shadow-2xl hover:shadow-primary/10 shadow-black/40 h-full flex flex-col",
       className
     )}>
-      <div className="p-5 sm:p-8 flex-grow">
+      <div className="p-8 flex-grow">
         <div className="flex items-start justify-between mb-8">
           <div className="relative">
             {iconUrl ? (
@@ -93,7 +93,7 @@ export const ServerCard = ({
         </div>
       </div>
 
-      <div className="px-5 sm:px-8 py-6 bg-slate-900/40 border-t border-slate-800/50 group-hover:bg-primary/5 transition-all">
+      <div className="px-8 py-6 bg-slate-900/40 border-t border-slate-800/50 group-hover:bg-primary/5 transition-all">
         <Link href={`/dashboard/guild/${id}`} className="block">
           <Button className="w-full justify-between group/btn py-7 rounded-2xl border-slate-700 font-black uppercase tracking-tighter text-xs" variant="secondary">
             <span>Access Dashboard</span>

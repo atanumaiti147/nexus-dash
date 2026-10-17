@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -103,14 +103,14 @@ export default async function GuildsPage() {
       </div>
 
       {error ? (
-        <div className="bg-blue-500/10 border border-blue-500/20 p-5 sm:p-8 rounded-2xl text-center">
-          <ShieldCheck className="h-12 w-12 text-blue-500 mx-auto mb-4 opacity-50" />
+        <div className="bg-red-500/10 border border-red-500/20 p-8 rounded-2xl text-center">
+          <ShieldCheck className="h-12 w-12 text-red-500 mx-auto mb-4 opacity-50" />
           <h3 className="text-white font-bold text-lg">Connection Error</h3>
           <p className="text-slate-400 mt-2">{error}</p>
           <Button variant="outline" className="mt-6">Retry Connection</Button>
         </div>
       ) : guilds.length === 0 ? (
-        <div className="bg-slate-800/30 border border-slate-800 border-dashed p-6 sm:p-12 lg:p-16 rounded-3xl text-center">
+        <div className="bg-slate-800/30 border border-slate-800 border-dashed p-16 rounded-3xl text-center">
           <div className="h-16 w-16 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6">
             <Users className="h-8 w-8 text-slate-600" />
           </div>
@@ -119,7 +119,7 @@ export default async function GuildsPage() {
             The bot hasn&apos;t joined any servers yet, or you don&apos;t have permission.
           </p>
           <div className="mt-8 bg-slate-900/50 p-4 rounded-xl text-left font-mono text-sm text-slate-300 max-w-2xl mx-auto overflow-auto max-h-48 whitespace-pre">
-            <p className="font-bold text-blue-400 mb-2">Diagnostic Data:</p>
+            <p className="font-bold text-red-400 mb-2">Diagnostic Data:</p>
             <p>1. Bot&apos;s Cache Total Servers: {botGuilds.length}</p>
             <p>2. Your Discord Profile Total Servers: {userGuilds.length}</p>
             <p>3. Your Discord Profile Admin/Manage Servers: {adminUserGuilds.length}</p>

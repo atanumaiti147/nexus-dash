@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -116,7 +116,7 @@ export default function VanityRolesPage({ params }: { params: { guildId: string 
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <div className="lg:col-span-3 space-y-6">
-          <div className="bg-[#141B2D] border border-slate-800 rounded-3xl overflow-hidden shadow-xl p-5 sm:p-8 space-y-8">
+          <div className="bg-[#141B2D] border border-slate-800 rounded-3xl overflow-hidden shadow-xl p-8 space-y-8">
             
             {/* Add New Setup */}
             <div className="space-y-4">
@@ -180,7 +180,7 @@ export default function VanityRolesPage({ params }: { params: { guildId: string 
                 <Link2 className="h-5 w-5 text-primary" /> Active Setups
               </h4>
               {setups.length === 0 ? (
-                <div className="text-center p-5 sm:p-8 bg-slate-900/20 rounded-2xl border border-dashed border-slate-700">
+                <div className="text-center p-8 bg-slate-900/20 rounded-2xl border border-dashed border-slate-700">
                   <Link2 className="w-10 h-10 text-slate-600 mx-auto mb-3" />
                   <p className="text-sm text-slate-500">No vanity role setups configured yet.</p>
                 </div>
@@ -189,7 +189,7 @@ export default function VanityRolesPage({ params }: { params: { guildId: string 
                   const role = filteredRoles.find(r => r.id === String(setup.role_id));
                   const channel = channels.find(c => c.id === String(setup.log_channel_id));
                   return (
-                    <div key={index} className="flex items-center justify-between gap-3 p-4 bg-slate-900/40 rounded-xl border border-slate-800 animate-in zoom-in-95 duration-200">
+                    <div key={index} className="flex items-center justify-between p-4 bg-slate-900/40 rounded-xl border border-slate-800 animate-in zoom-in-95 duration-200">
                       <div className="flex items-center gap-8">
                         <div className="flex flex-col">
                           <span className="text-[10px] uppercase font-bold text-slate-500">Vanity Text</span>

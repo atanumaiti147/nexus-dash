@@ -7,7 +7,7 @@
  * ║                                                                  ║
  * ║                © 2026 Nexus — All Rights Reserved                ║
  * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                       ║
+ * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
  * ║   youtube  ──  https://youtube.com/@Nexus                        ║
  * ║   github   ──  https://github.com/RayExo                         ║
  * ║                                                                  ║
@@ -140,7 +140,7 @@ export function AutoRoleForm({ initialConfig, roles, guildId }: AutoRoleFormProp
                     <span className="text-slate-200 font-medium">{role ? role.name : `Unknown (${roleId})`}</span>
                     <button 
                       onClick={() => removeRole(type, roleId)}
-                      className="ml-1 text-slate-500 hover:text-blue-400 transition-colors p-0.5 rounded-md hover:bg-blue-400/10"
+                      className="ml-1 text-slate-500 hover:text-red-400 transition-colors p-0.5 rounded-md hover:bg-red-400/10"
                     >
                       <Trash2 className="h-3.5 w-3.5" />
                     </button>
@@ -157,9 +157,9 @@ export function AutoRoleForm({ initialConfig, roles, guildId }: AutoRoleFormProp
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
       <div className="lg:col-span-3 space-y-6">
-        <div className="bg-[#141B2D] border border-slate-800 rounded-[32px] shadow-2xl p-5 sm:p-8 space-y-10 relative">
+        <div className="bg-[#141B2D] border border-slate-800 rounded-[32px] shadow-2xl p-8 space-y-10 relative">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {renderRoleList("humans")}
             {renderRoleList("bots")}
           </div>
