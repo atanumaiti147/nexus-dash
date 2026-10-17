@@ -215,7 +215,7 @@ export function ReactionRolesForm({ initialConfig, roles, guildId }: ReactionRol
                         size="sm" 
                         onClick={() => handleDelete(rr.message_id, rr.emoji)}
                         disabled={loadingAction}
-                        className="text-red-400 hover:text-red-300 hover:bg-red-400/10 h-8 w-8 p-0"
+                        className="text-blue-400 hover:text-blue-300 hover:bg-blue-400/10 h-8 w-8 p-0"
                       >
                         <Trash2 className="h-4 w-4" />
                       </Button>

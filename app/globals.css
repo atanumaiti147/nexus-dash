@@ -5,11 +5,11 @@
 :root {
   --background: #020617;
   --foreground: #f8fafc;
-  --primary: #ef4444;
-  --primary-glow: rgba(239, 68, 68, 0.15);
+  --primary: #3b82f6;
+  --primary-glow: rgba(59,130,246, 0.15);
   --glass-bg: rgba(15, 23, 42, 0.6);
   --glass-border: rgba(255, 255, 255, 0.05);
-  --glass-red-border: rgba(239, 68, 68, 0.2);
+  --glass-red-border: rgba(59,130,246, 0.2);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,7 +42,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ef4444; /* Primary Red */
+  background: #3b82f6; /* Primary Red */
 }
 
 /* Firefox */
@@ -66,7 +66,7 @@ body {
     @apply backdrop-blur-xl bg-white/[0.02] border border-white/[0.05];
   }
   .glass-red {
-    @apply backdrop-blur-xl bg-red-500/[0.02] border border-red-500/[0.1];
+    @apply backdrop-blur-xl bg-blue-500/[0.02] border border-blue-500/[0.1];
   }
   .liquid-glass {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);

@@ -75,8 +75,8 @@ export default function InvitesPage({ params }: { params: { guildId: string } })
                 <div className="text-xs font-bold uppercase text-primary flex items-center gap-2"><UserPlus className="w-3.5 h-3.5" /> Total</div>
                 <span className="text-2xl font-black text-white">{data.reduce((acc, curr) => acc + (curr.total || 0), 0)}</span>
               </div>
-              <div className="p-5 bg-red-500/5 border border-red-500/20 rounded-2xl flex flex-col gap-1">
-                <div className="text-xs font-bold uppercase text-red-500 flex items-center gap-2"><LogOut className="w-3.5 h-3.5" /> Left</div>
+              <div className="p-5 bg-blue-500/5 border border-blue-500/20 rounded-2xl flex flex-col gap-1">
+                <div className="text-xs font-bold uppercase text-blue-500 flex items-center gap-2"><LogOut className="w-3.5 h-3.5" /> Left</div>
                 <span className="text-2xl font-black text-white">{data.reduce((acc, curr) => acc + (curr.left || 0), 0)}</span>
               </div>
               <div className="p-5 bg-yellow-500/5 border border-yellow-500/20 rounded-2xl flex flex-col gap-1">
@@ -125,7 +125,7 @@ export default function InvitesPage({ params }: { params: { guildId: string } })
                       </div>
                       <div className="text-right">
                         <div className="text-[10px] uppercase font-bold text-slate-500">Left</div>
-                        <div className="text-red-400">{row.left}</div>
+                        <div className="text-blue-400">{row.left}</div>
                       </div>
                       <div className="text-right">
                         <div className="text-[10px] uppercase font-bold text-slate-500">Fake</div>

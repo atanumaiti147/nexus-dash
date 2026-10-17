@@ -51,7 +51,7 @@ export const MetricCard = ({
             {trend && (
               <span className={cn(
                 "text-[10px] font-black px-1.5 py-0.5 rounded-lg",
-                trend.isUp ? "bg-emerald-500/10 text-emerald-500" : "bg-red-500/10 text-red-500"
+                trend.isUp ? "bg-emerald-500/10 text-emerald-500" : "bg-blue-500/10 text-blue-500"
               )}>
                 {trend.isUp ? "+" : ""}{trend.value}
               </span>

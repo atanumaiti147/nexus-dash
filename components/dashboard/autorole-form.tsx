@@ -140,7 +140,7 @@ export function AutoRoleForm({ initialConfig, roles, guildId }: AutoRoleFormProp
                     <span className="text-slate-200 font-medium">{role ? role.name : `Unknown (${roleId})`}</span>
                     <button 
                       onClick={() => removeRole(type, roleId)}
-                      className="ml-1 text-slate-500 hover:text-red-400 transition-colors p-0.5 rounded-md hover:bg-red-400/10"
+                      className="ml-1 text-slate-500 hover:text-blue-400 transition-colors p-0.5 rounded-md hover:bg-blue-400/10"
                     >
                       <Trash2 className="h-3.5 w-3.5" />
                     </button>

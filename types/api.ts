@@ -260,12 +260,35 @@ export interface AdminNodeStatus {
   icon: string;
 }
 
+export interface MongoStatus {
+  connected: boolean;
+  status?: string;          // e.g. "Connected", "Reconnecting", "Down"
+  ping_ms?: number;
+  host?: string;            // host only, never credentials
+  database?: string;
+  collections?: number;
+  documents?: number;
+  storage_mb?: string;
+  version?: string;
+}
+
+export interface BotRuntimeInfo {
+  uptime?: string;
+  guilds?: number;
+  users?: number;
+  commands?: number;
+  version?: string;
+  restarts?: number;
+}
+
 export interface AdminStats {
   total_users: string;
   active_servers: string;
   api_latency: string;
   db_size: string;
   nodes: AdminNodeStatus[];
+  mongodb?: MongoStatus;    // optional: bot API may not report it yet
+  bot?: BotRuntimeInfo;     // optional
 }
 
 export interface AdminConfig {

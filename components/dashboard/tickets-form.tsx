@@ -400,7 +400,7 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
                        }} className="p-2 hover:bg-slate-800 rounded-lg text-slate-400 hover:text-primary transition-colors">
                          <Settings2 className="h-4 w-4" />
                        </button>
-                       <button onClick={() => handleRemoveCategory(i)} className="p-2 hover:bg-red-500/10 rounded-lg text-slate-400 hover:text-red-500 transition-colors">
+                       <button onClick={() => handleRemoveCategory(i)} className="p-2 hover:bg-blue-500/10 rounded-lg text-slate-400 hover:text-blue-500 transition-colors">
                          <Trash2 className="h-4 w-4" />
                        </button>
                     </div>
