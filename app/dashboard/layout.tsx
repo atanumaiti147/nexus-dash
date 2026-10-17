@@ -22,7 +22,7 @@ import { usePathname } from "next/navigation";
 import {
   LayoutDashboard, Server, ShieldCheck, Ticket, BarChart4, FileText, Settings,
   Menu, X, Bell, User, Search, ChevronRight, Star, Sparkles, LogOut,
-  LifeBuoy, ChevronDown, Bot, Shield
+  LifeBuoy, ChevronDown, Shield
 } from "lucide-react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { cn, isAdmin } from "@/lib/utils";
@@ -187,7 +187,7 @@ export default function DashboardLayout({
         <div className="flex h-16 items-center px-6 mt-4 flex-shrink-0">
           <div className="flex items-center gap-3 group">
             <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-blue-500 to-blue-800 flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform border border-white/10">
-              <Bot className="h-5 w-5 text-white" />
+              <img src="/falcon.png" alt="Bot logo" className="h-7 w-7 object-contain" />
             </div>
             <div className="flex flex-col">
               <h1 className="text-lg font-bold tracking-tight text-white font-outfit leading-none">

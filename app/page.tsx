@@ -99,7 +99,7 @@ export default function LandingPage() {
             Neural Core v2 Active • Global Shard 07
           </div>
           
-          <h1 className="text-6xl sm:text-8xl md:text-[10rem] font-bold text-white tracking-tighter leading-[0.8] mb-12 font-outfit animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-100 uppercase">
+          <h1 className="text-4xl xs:text-5xl sm:text-7xl lg:text-[10rem] font-bold text-white tracking-tighter leading-[0.9] sm:leading-[0.8] break-words mb-12 font-outfit animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-100 uppercase">
             Evolution <br />
             <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-orange-500 bg-clip-text text-transparent italic font-black">Moderated.</span>
           </h1>
@@ -145,7 +145,7 @@ export default function LandingPage() {
                 <div className="flex items-center justify-between z-10 relative">
                   <div className="space-y-6">
                     <div className="h-12 w-64 bg-blue-500/10 rounded-[20px] border border-blue-500/20" />
-                    <div className="h-6 w-[500px] bg-white/[0.02] rounded-xl" />
+                    <div className="h-6 w-[260px] sm:w-[500px] bg-white/[0.02] rounded-xl" />
                   </div>
                   <div className="h-20 w-20 rounded-[30px] bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shadow-[0_0_30px_rgba(59,130,246,0.2)]">
                     <Activity className="h-8 w-8 text-blue-500 animate-pulse" />
@@ -172,18 +172,18 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-32 gap-12 px-4">
             <div className="max-w-3xl">
-              <h2 className="text-6xl md:text-8xl font-bold text-white tracking-tighter font-outfit mb-8 uppercase italic leading-none">High-Scale <br /><span className="text-blue-500 not-italic">Infrastructure.</span></h2>
+              <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white tracking-tighter font-outfit mb-8 uppercase italic leading-none break-words">High-Scale <br /><span className="text-blue-500 not-italic">Infrastructure.</span></h2>
               <p className="text-2xl text-slate-500 font-medium leading-relaxed">Global redundancy delivers sub-millisecond dispatch times across 20+ edge regions. Zero lag, zero downtime.</p>
             </div>
             <div className="flex items-center gap-10 pb-4">
                <div className="text-right">
                  <p className="text-[10px] font-black uppercase text-slate-600 tracking-[0.3em] mb-3">Ping Latency</p>
-                 <p className="text-5xl font-black text-blue-500 font-outfit">12ms</p>
+                 <p className="text-3xl sm:text-5xl font-black text-blue-500 font-outfit">12ms</p>
                </div>
                <div className="h-16 w-[1px] bg-white/5" />
                <div className="text-right">
                  <p className="text-[10px] font-black uppercase text-slate-600 tracking-[0.3em] mb-3">Global Uptime</p>
-                 <p className="text-5xl font-black text-white font-outfit">99.9<span className="text-slate-700">9</span>%</p>
+                 <p className="text-3xl sm:text-3xl sm:text-5xl font-black text-white font-outfit">99.9<span className="text-slate-700">9</span>%</p>
                </div>
             </div>
           </div>
@@ -250,7 +250,7 @@ export default function LandingPage() {
               <div className="inline-flex px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-[10px] font-black uppercase tracking-[0.3em]">
                  The Stack
               </div>
-              <h2 className="text-6xl md:text-7xl font-bold text-white tracking-tighter font-outfit uppercase">Neural Core <br /><span className="text-slate-600 italic">Technology.</span></h2>
+              <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-tighter font-outfit uppercase break-words">Neural Core <br /><span className="text-slate-600 italic">Technology.</span></h2>
               <p className="text-xl text-slate-500 leading-relaxed font-medium">
                 Our proprietary engine is built on a custom Rust-based microkernel that handles millions of events with a footprint smaller than a typical Discord bot.
               </p>
@@ -288,7 +288,7 @@ export default function LandingPage() {
       <section id="modules" className="py-48 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-32 space-y-6">
-             <h2 className="text-6xl md:text-8xl font-bold text-white tracking-tighter font-outfit uppercase">The Matrix <br /><span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent italic">Complete.</span></h2>
+             <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white tracking-tighter font-outfit uppercase break-words">The Matrix <br /><span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent italic">Complete.</span></h2>
              <p className="text-2xl text-slate-500 max-w-3xl mx-auto font-medium lowercase">Every module you need. Redefined for the modern era.</p>
           </div>
 
@@ -324,7 +324,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto relative z-10">
            <div className="flex flex-col lg:flex-row items-center gap-24">
               <div className="flex-1 space-y-12">
-                 <h2 className="text-6xl md:text-8xl font-bold text-white tracking-tighter font-outfit uppercase">Global <br /><span className="text-blue-500">Reach.</span></h2>
+                 <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white tracking-tighter font-outfit uppercase break-words">Global <br /><span className="text-blue-500">Reach.</span></h2>
                   <p className="text-2xl text-slate-500 leading-relaxed font-medium">
                     Powering servers with over 12 million combined users. Our network spans every continent, bringing your community closer together.
                   </p>
@@ -335,7 +335,7 @@ export default function LandingPage() {
                       { stat: "5.2K", label: "Verified Communities" }
                     ].map((item, i) => (
                       <div key={i} className="flex items-center gap-8">
-                         <div className="text-5xl font-black text-white font-outfit">{item.stat}</div>
+                         <div className="text-3xl sm:text-3xl sm:text-5xl font-black text-white font-outfit">{item.stat}</div>
                          <div className="h-[1px] flex-1 bg-white/5" />
                          <div className="text-[11px] font-black uppercase text-blue-500 tracking-[0.3em]">{item.label}</div>
                       </div>
@@ -362,7 +362,7 @@ export default function LandingPage() {
       <section className="py-48 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-24">
-             <h2 className="text-5xl md:text-6xl font-black text-white font-outfit tracking-tighter uppercase mb-6">Knowledge Base</h2>
+             <h2 className="text-3xl sm:text-5xl md:text-6xl font-black text-white font-outfit tracking-tighter uppercase mb-6 break-words">Knowledge Base</h2>
              <p className="text-slate-600 font-bold uppercase tracking-widest text-xs">Frequently Asked Questions</p>
           </div>
           <div className="space-y-6">
@@ -389,7 +389,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto relative rounded-[80px] p-24 md:p-32 overflow-hidden bg-gradient-to-br from-blue-600 to-blue-900 text-center shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
            <div className="relative z-10">
-              <h2 className="text-7xl md:text-[9rem] font-bold text-white tracking-tighter font-outfit mb-12 uppercase leading-[0.8] italic">Ready to <br />Evolve?</h2>
+              <h2 className="text-4xl sm:text-7xl md:text-[9rem] font-bold text-white tracking-tighter font-outfit mb-12 uppercase leading-[0.9] sm:leading-[0.8] italic break-words">Ready to <br />Evolve?</h2>
               <p className="text-2xl text-white/70 max-w-3xl mx-auto mb-20 font-medium">Join 5,000+ communities scaling their automation with the Nexus Engine. Setup takes less than 30 seconds.</p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-8 tracking-widest uppercase text-xs font-black">
                 <Button 
