@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #020617;
+  --foreground: #f8fafc;
+  --primary: #3b82f6;
+  --primary-glow: rgba(59, 130, 246, 0.15);
+  --glass-bg: rgba(15, 23, 42, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --primary-soft: rgba(59, 130, 246, 0.08);
+  --glass-blue-border: rgba(59, 130, 246, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #020617;
+    --foreground: #f8fafc;
+  }
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(59, 130, 246, 0.6);
+  outline-offset: 2px;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Use the dynamic viewport height on mobile browsers (address bar safe) */
+@supports (height: 100dvh) {
+  .min-h-screen { min-height: 100dvh; }
+}
+
+/* Never let media or long strings push the layout sideways */
+img, svg, video, canvas { max-width: 100%; }
+pre, code { overflow-x: auto; max-width: 100%; }
+h1, h2, h3, p, span, a, label { overflow-wrap: anywhere; }
+
+/* Icons never get squashed inside flex rows; truncated text can shrink */
+svg { flex-shrink: 0; }
+.truncate { min-width: 0; }
+
+/* iOS zooms into inputs smaller than 16px - prevent that on phones */
+@media (max-width: 639px) {
+  input:not([type="checkbox"]):not([type="radio"]), select, textarea { font-size: 16px !important; }
+}
+
+/* Notch / home-indicator safe areas */
+.safe-pb { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+.safe-px {
+  padding-left: max(0.75rem, env(safe-area-inset-left));
+  padding-right: max(0.75rem, env(safe-area-inset-right));
+}
+
+/* Touch devices: comfortable tap targets, no sticky hover states */
+@media (pointer: coarse) {
+  button, [role="button"], a, select, summary { min-height: 40px; }
+  .no-touch-min { min-height: 0 !important; }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+  border: 2px solid #020617;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6; /* Primary Blue */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1e293b #020617;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .glass {
+    @apply backdrop-blur-xl bg-white/[0.02] border border-white/[0.05];
+  }
+  .glass-blue {
+    @apply backdrop-blur-xl bg-blue-500/[0.02] border border-blue-500/[0.1];
+  }
+  .bg-ambient {
+    background-image:
+      radial-gradient(60% 50% at 15% 0%, rgba(59, 130, 246, 0.12) 0%, transparent 70%),
+      radial-gradient(45% 40% at 90% 10%, rgba(34, 211, 238, 0.07) 0%, transparent 70%);
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-500/30 hover:shadow-glow-blue;
+  }
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-300 bg-clip-text text-transparent;
+  }
+  .liquid-glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+}
