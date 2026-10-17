@@ -45,7 +45,7 @@ html {
 /* Never let media or long strings push the layout sideways */
 img, svg, video, canvas { max-width: 100%; }
 pre, code { overflow-x: auto; max-width: 100%; }
-h1, h2, h3, p, span, a, label { overflow-wrap: anywhere; }
+h1, h2, h3, h4, p, span, a, label { overflow-wrap: break-word; }
 
 /* Icons never get squashed inside flex rows; truncated text can shrink */
 svg { flex-shrink: 0; }

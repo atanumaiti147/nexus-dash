@@ -51,6 +51,13 @@ import { cn } from "@/lib/utils";
 
 export default function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [authError, setAuthError] = useState<string | null>(null);
+
+  // NextAuth redirects back to "/?error=..." when login fails - show it nicely
+  useEffect(() => {
+    const err = new URLSearchParams(window.location.search).get("error");
+    if (err) setAuthError(err);
+  }, []);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -66,6 +73,27 @@ export default function LandingPage() {
         <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-blue-500/[0.03] blur-[150px] rounded-full animate-pulse" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-blue-600/[0.03] blur-[150px] rounded-full animate-pulse [animation-delay:2s]" />
       </div>
+
+      {authError && (
+        <div role="alert" className="fixed bottom-4 inset-x-4 sm:left-auto sm:right-6 sm:w-[26rem] z-[60] rounded-2xl border border-red-500/30 bg-[#0a0f1e]/95 backdrop-blur-xl p-4 shadow-2xl">
+          <div className="flex items-start gap-3">
+            <ShieldAlert className="h-5 w-5 text-red-400 mt-0.5" />
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-bold text-white">Discord login failed</p>
+              <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                {authError === "OAuthCallback" || authError === "Callback"
+                  ? "Discord could not complete the sign-in. Please try again. If it keeps failing, the site owner needs to check the Discord redirect URL and client secret."
+                  : authError === "AccessDenied"
+                  ? "Access was denied. Please approve the Discord permissions to continue."
+                  : "Something went wrong while signing in. Please try again."}
+              </p>
+            </div>
+            <button type="button" aria-label="Dismiss" onClick={() => setAuthError(null)} className="text-slate-500 hover:text-white">
+              <X className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 border-b border-white/[0.03] bg-[#020617]/80 backdrop-blur-3xl transition-all duration-500">
@@ -139,7 +167,7 @@ export default function LandingPage() {
             Neural Core v2 Active • Global Shard 07
           </div>
           
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] font-bold text-white tracking-tighter leading-[0.8] mb-8 sm:mb-12 font-outfit animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-100 uppercase">
+          <h1 className="text-4xl min-[400px]:text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] font-bold text-white tracking-tighter leading-[0.8] mb-8 sm:mb-12 font-outfit animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-100 uppercase">
             Evolution <br />
             <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 bg-clip-text text-transparent italic font-black">Moderated.</span>
           </h1>
@@ -213,7 +241,7 @@ export default function LandingPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-32 gap-6 sm:gap-12 px-4">
             <div className="max-w-3xl">
               <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white tracking-tighter font-outfit mb-8 uppercase italic leading-none">High-Scale <br /><span className="text-blue-500 not-italic">Infrastructure.</span></h2>
-              <p className="text-2xl text-slate-500 font-medium leading-relaxed">Global redundancy delivers sub-millisecond dispatch times across 20+ edge regions. Zero lag, zero downtime.</p>
+              <p className="text-lg sm:text-2xl text-slate-500 font-medium leading-relaxed">Global redundancy delivers sub-millisecond dispatch times across 20+ edge regions. Zero lag, zero downtime.</p>
             </div>
             <div className="flex items-center gap-5 sm:gap-10 pb-4">
                <div className="text-right">
@@ -285,13 +313,13 @@ export default function LandingPage() {
 
       {/* Architecture Section */}
       <section id="architecture" className="py-20 sm:py-32 lg:py-48 px-6 bg-white/[0.01]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
            <div className="space-y-12">
               <div className="inline-flex px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-[10px] font-black uppercase tracking-[0.3em]">
                  The Stack
               </div>
               <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-tighter font-outfit uppercase">Neural Core <br /><span className="text-slate-600 italic">Technology.</span></h2>
-              <p className="text-xl text-slate-500 leading-relaxed font-medium">
+              <p className="text-base sm:text-xl text-slate-500 leading-relaxed font-medium">
                 Our proprietary engine is built on a custom Rust-based microkernel that handles millions of events with a footprint smaller than a typical Discord bot.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
@@ -327,9 +355,9 @@ export default function LandingPage() {
       {/* Modules Grid */}
       <section id="modules" className="py-20 sm:py-32 lg:py-48 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-32 space-y-6">
+          <div className="text-center mb-16 sm:mb-32 space-y-6">
              <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white tracking-tighter font-outfit uppercase">The Matrix <br /><span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent italic">Complete.</span></h2>
-             <p className="text-2xl text-slate-500 max-w-3xl mx-auto font-medium lowercase">Every module you need. Redefined for the modern era.</p>
+             <p className="text-lg sm:text-2xl text-slate-500 max-w-3xl mx-auto font-medium lowercase">Every module you need. Redefined for the modern era.</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -362,10 +390,10 @@ export default function LandingPage() {
       {/* Network / Global Section */}
       <section id="network" className="py-20 sm:py-32 lg:py-48 px-6 bg-blue-600/[0.01] relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
-           <div className="flex flex-col lg:flex-row items-center gap-24">
+           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
               <div className="flex-1 space-y-12">
                  <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white tracking-tighter font-outfit uppercase">Global <br /><span className="text-blue-500">Reach.</span></h2>
-                  <p className="text-2xl text-slate-500 leading-relaxed font-medium">
+                  <p className="text-lg sm:text-2xl text-slate-500 leading-relaxed font-medium">
                     Powering servers with over 12 million combined users. Our network spans every continent, bringing your community closer together.
                   </p>
                  <div className="space-y-8">
@@ -402,7 +430,7 @@ export default function LandingPage() {
       <section className="py-20 sm:py-32 lg:py-48 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14 sm:mb-24">
-             <h2 className="text-5xl md:text-6xl font-black text-white font-outfit tracking-tighter uppercase mb-6">Knowledge Base</h2>
+             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white font-outfit tracking-tighter uppercase mb-6">Knowledge Base</h2>
              <p className="text-slate-600 font-bold uppercase tracking-widest text-xs">Frequently Asked Questions</p>
           </div>
           <div className="space-y-6">
@@ -426,12 +454,12 @@ export default function LandingPage() {
 
       {/* CTA Section */}
       <section className="py-20 sm:py-32 lg:py-48 px-6">
-        <div className="max-w-6xl mx-auto relative rounded-[80px] p-24 md:p-32 overflow-hidden bg-gradient-to-br from-blue-600 to-blue-900 text-center shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
+        <div className="max-w-6xl mx-auto relative rounded-[2rem] sm:rounded-[3.5rem] lg:rounded-[80px] px-5 py-12 sm:p-16 lg:p-32 overflow-hidden bg-gradient-to-br from-blue-600 to-blue-900 text-center shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
            <div className="relative z-10">
-              <h2 className="text-5xl sm:text-7xl md:text-[9rem] font-bold text-white tracking-tighter font-outfit mb-8 sm:mb-12 uppercase leading-[0.8] italic">Ready to <br />Evolve?</h2>
-              <p className="text-2xl text-white/70 max-w-3xl mx-auto mb-12 sm:mb-20 font-medium">Join 5,000+ communities scaling their automation with the Nexus Engine. Setup takes less than 30 seconds.</p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-8 tracking-widest uppercase text-xs font-black">
+              <h2 className="text-4xl min-[400px]:text-5xl sm:text-7xl lg:text-[9rem] font-bold text-white tracking-tighter font-outfit mb-8 sm:mb-12 uppercase leading-[0.9] sm:leading-[0.8] italic">Ready to <br />Evolve?</h2>
+              <p className="text-base sm:text-xl lg:text-2xl text-white/70 max-w-3xl mx-auto mb-10 sm:mb-20 font-medium">Join 5,000+ communities scaling their automation with the Nexus Engine. Setup takes less than 30 seconds.</p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8 tracking-widest uppercase text-xs font-black">
                 <Button 
                   onClick={() => signIn('discord', { callbackUrl: '/dashboard' })}
                   className="w-full sm:w-auto rounded-3xl px-8 sm:px-16 py-7 sm:py-10 bg-white text-black hover:bg-slate-100 border-none shadow-[0_20px_50px_rgba(0,0,0,0.4)] font-black text-lg transition-transform hover:scale-105 active:scale-95"
