@@ -70,12 +70,11 @@ async function request<T>(
     });
 
     if (!response.ok) {
-            let errorData;
+      let errorData;
       try {
         errorData = await response.json();
       } catch {
-        const text = await response.text().catch(() => "");
-        errorData = { detail: `HTTP ${response.status}${text ? ": " + text.slice(0, 120) : ""}` };
+        errorData = { detail: "An unknown error occurred" };
       }
       console.error(`[API HTTP Error] Status ${response.status} for ${url}:`, errorData);
       throw new ApiError(response.status, errorData.detail || response.statusText);

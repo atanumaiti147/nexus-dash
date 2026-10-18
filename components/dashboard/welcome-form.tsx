@@ -108,6 +108,62 @@ export function WelcomeForm({ initialConfig, channels, guildId }: WelcomeFormPro
             )}
 
             {config.welcome_type === "embed" && (
+              <div className="space-y-4">
+                <div>
+                  <label className="text-xs font-black uppercase text-slate-500 tracking-widest pl-1">Message (embed ke upar text)</label>
+                  <input
+                    type="text"
+                    value={config.embed_data?.message || ""}
+                    onChange={(e) => setConfig({ ...config, embed_data: { ...config.embed_data, message: e.target.value } })}
+                    placeholder="{user} ka mention"
+                    className="w-full mt-2 bg-[#0f172a] border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 text-white"
+                  />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="min-w-0">
+                  <label className="text-xs font-black uppercase text-slate-500 tracking-widest pl-1">Footer Text</label>
+                  <input
+                    type="text"
+                    value={config.embed_data?.footer_text || ""}
+                    onChange={(e) => setConfig({ ...config, embed_data: { ...config.embed_data, footer_text: e.target.value } })}
+                    placeholder="Your are the {server_membercount} members"
+                    className="w-full mt-2 bg-[#0f172a] border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 text-white"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <label className="text-xs font-black uppercase text-slate-500 tracking-widest pl-1">Footer Icon URL</label>
+                  <input
+                    type="text"
+                    value={config.embed_data?.footer_icon || ""}
+                    onChange={(e) => setConfig({ ...config, embed_data: { ...config.embed_data, footer_icon: e.target.value } })}
+                    placeholder="https://..."
+                    className="w-full mt-2 bg-[#0f172a] border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 text-white"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <label className="text-xs font-black uppercase text-slate-500 tracking-widest pl-1">Author Name</label>
+                  <input
+                    type="text"
+                    value={config.embed_data?.author_name || ""}
+                    onChange={(e) => setConfig({ ...config, embed_data: { ...config.embed_data, author_name: e.target.value } })}
+                    placeholder="Author name"
+                    className="w-full mt-2 bg-[#0f172a] border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 text-white"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <label className="text-xs font-black uppercase text-slate-500 tracking-widest pl-1">Author Icon URL</label>
+                  <input
+                    type="text"
+                    value={config.embed_data?.author_icon || ""}
+                    onChange={(e) => setConfig({ ...config, embed_data: { ...config.embed_data, author_icon: e.target.value } })}
+                    placeholder="https://..."
+                    className="w-full mt-2 bg-[#0f172a] border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 text-white"
+                  />
+                </div>
+                </div>
+              </div>
+)}
+{config.welcome_type === "embed" && (
               <div className="space-y-4 pt-4 border-t border-slate-800/50">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>

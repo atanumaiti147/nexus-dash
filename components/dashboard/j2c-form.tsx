@@ -78,8 +78,8 @@ export function J2CForm({ initialConfig, channels, guildId }: J2CFormProps) {
       <div className="lg:col-span-3 space-y-6">
         <div className="bg-[#141B2D] border border-slate-800 rounded-3xl shadow-xl p-8 space-y-8">
           
-          <div className="flex items-center justify-between p-6 bg-slate-900/40 rounded-2xl border border-slate-800">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 sm:p-6 bg-slate-900/40 rounded-2xl border border-slate-800">
+            <div className="flex items-center gap-4 min-w-0">
               <div className={cn("p-3 rounded-xl transition-colors", isEnabled ? "bg-emerald-500/20 text-emerald-500" : "bg-blue-500/20 text-blue-500")}>
                 <Power className="w-5 h-5" />
               </div>
@@ -88,10 +88,10 @@ export function J2CForm({ initialConfig, channels, guildId }: J2CFormProps) {
                 <p className="text-sm text-slate-400 mt-1">Enable or disable the Join to Create module.</p>
               </div>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="px-4 py-2 rounded-full bg-slate-900 border border-slate-800 flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 shrink-0">
+              <div className="px-4 py-2 rounded-full bg-slate-900 border border-slate-800 flex items-center gap-2 whitespace-nowrap shrink-0">
                 <div className={cn("w-2 h-2 rounded-full", isEnabled ? 'bg-emerald-500 animate-pulse' : 'bg-blue-500')} />
-                <span className="text-xs font-bold uppercase track-wider text-slate-300">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-300 whitespace-nowrap">
                   {isEnabled ? 'Active' : 'Inactive'}
                 </span>
               </div>

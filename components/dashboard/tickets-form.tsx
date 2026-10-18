@@ -382,8 +382,8 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
                 {config.categories.map((cat, i) => (
                   <div key={i} className="flex items-center justify-between gap-3 p-4 bg-slate-900/50 rounded-2xl border border-white/5 hover:border-primary/30 transition-all group min-w-0 overflow-hidden">
                     <div className="flex items-center gap-3 min-w-0 flex-1">
-                      <div className="h-10 w-10 rounded-xl bg-slate-800 flex items-center justify-center text-xl shadow-inner">
-                        {cat.emoji || '📩'}
+                      <div className="h-10 w-10 shrink-0 overflow-hidden rounded-xl bg-slate-800 flex items-center justify-center text-xl shadow-inner">
+                        {(cat.emoji && !/[<>]/.test(cat.emoji) && cat.emoji.length <= 8) ? cat.emoji : '📩'}
                       </div>
                       <div className="flex flex-col min-w-0">
                         <span className="text-sm font-bold text-slate-200 group-hover:text-white transition-colors truncate">{cat.name}</span>
