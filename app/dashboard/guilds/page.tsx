@@ -110,7 +110,7 @@ export default async function GuildsPage() {
           <Button variant="outline" className="mt-6">Retry Connection</Button>
         </div>
       ) : guilds.length === 0 ? (
-        <div className="bg-slate-800/30 border border-slate-800 border-dashed p-16 rounded-3xl text-center">
+        <div className="bg-slate-800/30 border border-slate-800 border-dashed p-6 sm:p-16 rounded-3xl text-center">
           <div className="h-16 w-16 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6">
             <Users className="h-8 w-8 text-slate-600" />
           </div>

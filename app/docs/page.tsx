@@ -150,7 +150,7 @@ export default function DocsPage() {
             V2.4 Runtime Environment
           </div>
 
-          <h1 className="text-6xl font-bold text-white font-outfit tracking-tighter uppercase mb-8 italic">
+          <h1 className="text-2xl sm:text-4xl sm:text-6xl font-bold text-white font-outfit tracking-tighter uppercase mb-8 italic">
             {activeTab}<span className="text-blue-500 not-italic">.</span>
           </h1>
 

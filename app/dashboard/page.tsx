@@ -58,7 +58,7 @@ export default async function DashboardPage() {
     <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 px-2">
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white font-outfit tracking-tight">System <span className="text-blue-500 italic">Core.</span></h1>
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white font-outfit tracking-tight">System <span className="text-blue-500 italic">Core.</span></h1>
           <p className="text-slate-400 mt-3 font-medium flex items-center gap-2">
             Status and live metrics for <span className="text-blue-500 font-bold px-2 py-0.5 rounded-lg bg-blue-500/10 border border-blue-500/20">{botInfo.name}</span>
           </p>
@@ -96,7 +96,7 @@ export default async function DashboardPage() {
 
       {/* Featured Modules & Support */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 glass border-white/5 rounded-[40px] p-10 relative group overflow-hidden shadow-2xl">
+        <div className="lg:col-span-2 glass border-white/5 rounded-[40px] p-5 sm:p-10 relative group overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
           
           <div className="flex items-center justify-between mb-8 relative z-10">
@@ -127,7 +127,7 @@ export default async function DashboardPage() {
           </div>
         </div>
 
-        <div className="glass border-white/5 rounded-[40px] p-10 flex flex-col justify-between relative group shadow-2xl overflow-hidden">
+        <div className="glass border-white/5 rounded-[40px] p-5 sm:p-10 flex flex-col justify-between relative group shadow-2xl overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-bl from-blue-500/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
           
           <div className="relative z-10">

@@ -60,7 +60,7 @@ export default async function GuildLayout({
 
   if (error || !guild) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[400px] border-2 border-dashed border-blue-500/20 rounded-3xl bg-blue-500/5 p-12 text-center">
+      <div className="flex flex-col items-center justify-center min-h-[400px] border-2 border-dashed border-blue-500/20 rounded-3xl bg-blue-500/5 p-5 sm:p-12 text-center">
         <ShieldAlert className="h-16 w-16 text-blue-500 mb-6 opacity-50" />
         <h2 className="text-2xl font-bold text-white">Access Denied</h2>
         <p className="text-slate-400 mt-2 max-w-md">{error || "This guild does not exist or you do not have permission to manage it."}</p>
@@ -92,7 +92,7 @@ export default async function GuildLayout({
                 className="rounded-3xl border-4 border-slate-800 shadow-2xl"
               />
             ) : (
-              <div className="h-[120px] w-[120px] bg-primary rounded-3xl flex items-center justify-center text-4xl font-bold text-white shadow-2xl border-4 border-slate-800">
+              <div className="h-[120px] w-[120px] bg-primary rounded-3xl flex items-center justify-center text-2xl sm:text-4xl font-bold text-white shadow-2xl border-4 border-slate-800">
                 {guild.name.charAt(0)}
               </div>
             )}
@@ -104,7 +104,7 @@ export default async function GuildLayout({
           <div className="flex-1 space-y-4">
             <div>
               <div className="flex items-center gap-3">
-                <h1 className="text-4xl font-black text-white tracking-tight">{guild.name}</h1>
+                <h1 className="text-2xl sm:text-4xl font-black text-white tracking-tight">{guild.name}</h1>
                 <span className="px-3 py-1 bg-slate-800 rounded-lg text-[10px] uppercase font-black text-slate-500 tracking-tighter border border-white/5">
                   ID: {guildId}
                 </span>

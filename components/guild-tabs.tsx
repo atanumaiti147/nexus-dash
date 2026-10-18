@@ -87,11 +87,11 @@ export function GuildTabs({ guildId }: { guildId: string }) {
   ].filter(tab => tab.href); // Filter out any undefined hrefs
 
   return (
-    <div className="relative group/tabs flex items-center w-full mb-8 sticky top-[64px] z-20 transition-all duration-300">
+    <div className="relative group/tabs flex items-center w-full mb-6 sm:mb-8 sticky top-[84px] sm:top-[104px] z-20 transition-all duration-300">
       {/* Scroll Arrows */}
       <button 
         onClick={() => scroll("left")}
-        className="absolute left-[-16px] z-30 p-2 rounded-full bg-slate-800 border border-slate-700 text-white shadow-xl opacity-0 group-hover/tabs:opacity-100 transition-opacity hover:bg-primary"
+        className="hidden sm:block absolute left-[-16px] z-30 p-2 rounded-full bg-slate-800 border border-slate-700 text-white shadow-xl opacity-0 group-hover/tabs:opacity-100 transition-opacity hover:bg-primary"
       >
         <ChevronLeft className="h-4 w-4" />
       </button>
@@ -101,7 +101,7 @@ export function GuildTabs({ guildId }: { guildId: string }) {
       
       <div 
         ref={scrollContainerRef}
-        className="flex gap-2 p-1.5 bg-[#141B2D]/40 border border-slate-800/40 rounded-[20px] overflow-x-auto no-scrollbar w-full scroll-smooth shadow-2xl shadow-black/20"
+        className="flex gap-2 p-1.5 bg-[#0f172a]/90 backdrop-blur-xl border border-slate-800/40 rounded-2xl sm:rounded-[20px] overflow-x-auto no-scrollbar w-full scroll-smooth shadow-2xl shadow-black/20"
       >
         {tabs.map((tab) => {
           const isActive = pathname === tab.href;
@@ -112,7 +112,7 @@ export function GuildTabs({ guildId }: { guildId: string }) {
               className="shrink-0"
             >
               <div className={cn(
-                "flex items-center gap-2.5 px-6 py-2.5 rounded-[14px] text-[11px] font-black uppercase tracking-wider transition-all duration-500 whitespace-nowrap",
+                "flex items-center gap-2 sm:gap-2.5 px-4 sm:px-6 py-2.5 rounded-xl sm:rounded-[14px] text-[11px] font-black uppercase tracking-wider transition-all duration-500 whitespace-nowrap",
                 "hover:bg-slate-800/60 hover:text-white",
                 isActive 
                   ? "bg-primary text-white shadow-lg shadow-primary/30 ring-1 ring-white/10" 

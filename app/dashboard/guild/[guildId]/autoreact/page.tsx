@@ -103,7 +103,7 @@ export default function AutoReactPage({ params }: { params: { guildId: string } 
           <div className="bg-[#141B2D] border border-slate-800 rounded-3xl overflow-hidden shadow-xl p-8 space-y-6">
             
             {config.triggers.length === 0 ? (
-              <div className="text-center p-12 bg-slate-900/20 rounded-2xl border border-dashed border-slate-700">
+              <div className="text-center p-5 sm:p-12 bg-slate-900/20 rounded-2xl border border-dashed border-slate-700">
                 <Smile className="w-14 h-14 text-slate-600 mx-auto mb-4" />
                 <p className="text-lg font-medium text-slate-400">No triggers configured</p>
                 <p className="text-sm text-slate-500 mb-6">Start by adding your first auto-reaction trigger.</p>

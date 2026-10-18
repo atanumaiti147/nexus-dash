@@ -70,7 +70,7 @@ export default function InvitesPage({ params }: { params: { guildId: string } })
           <div className="bg-[#141B2D] border border-slate-800 rounded-3xl overflow-hidden shadow-xl p-8 space-y-8">
             
             {/* Stats Cards */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
               <div className="p-5 bg-primary/5 border border-primary/20 rounded-2xl flex flex-col gap-1">
                 <div className="text-xs font-bold uppercase text-primary flex items-center gap-2"><UserPlus className="w-3.5 h-3.5" /> Total</div>
                 <span className="text-2xl font-black text-white">{data.reduce((acc, curr) => acc + (curr.total || 0), 0)}</span>
@@ -96,7 +96,7 @@ export default function InvitesPage({ params }: { params: { guildId: string } })
               </h4>
 
               {data.length === 0 ? (
-                <div className="text-center p-12 bg-slate-900/20 rounded-2xl border border-dashed border-slate-700">
+                <div className="text-center p-5 sm:p-12 bg-slate-900/20 rounded-2xl border border-dashed border-slate-700">
                   <TrendingUp className="w-10 h-10 text-slate-600 mx-auto mb-3" />
                   <p className="text-sm text-slate-500">No invite data found yet.</p>
                 </div>

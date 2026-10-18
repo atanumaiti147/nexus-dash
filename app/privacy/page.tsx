@@ -51,11 +51,11 @@ export default function PrivacyPage() {
             Privacy Shield v2.0
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-white font-outfit tracking-tighter uppercase mb-12 italic">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white font-outfit tracking-tighter uppercase mb-12 italic">
             Privacy <span className="text-blue-500 not-italic">Policy.</span>
           </h1>
 
-          <div className="glass border-white/5 rounded-[40px] p-10 md:p-16 space-y-12">
+          <div className="glass border-white/5 rounded-[40px] p-5 sm:p-10 md:p-16 space-y-12">
             <section className="space-y-6">
               <div className="flex items-center gap-4 text-white">
                 <div className="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-500">

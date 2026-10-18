@@ -155,7 +155,7 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
                       placeholder="e.g. Bug Reports"
                    />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className="text-xs font-black uppercase text-slate-500 tracking-widest">Emoji Icon</label>
                     <Input 
@@ -180,7 +180,7 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className="text-xs font-black uppercase text-slate-500 tracking-widest">Button Style</label>
                     <Select 
@@ -257,7 +257,7 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
                       className="h-24"
                    />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className="text-xs font-black uppercase text-slate-500 tracking-widest">Color (Decimal)</label>
                     <Input 
@@ -380,14 +380,14 @@ export function TicketsForm({ initialConfig, guildId }: TicketsFormProps) {
             <div className="p-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {config.categories.map((cat, i) => (
-                  <div key={i} className="flex items-center justify-between p-4 bg-slate-900/50 rounded-2xl border border-white/5 hover:border-primary/30 transition-all group">
-                    <div className="flex items-center gap-3">
+                  <div key={i} className="flex items-center justify-between gap-3 p-4 bg-slate-900/50 rounded-2xl border border-white/5 hover:border-primary/30 transition-all group min-w-0 overflow-hidden">
+                    <div className="flex items-center gap-3 min-w-0 flex-1">
                       <div className="h-10 w-10 rounded-xl bg-slate-800 flex items-center justify-center text-xl shadow-inner">
                         {cat.emoji || '📩'}
                       </div>
-                      <div className="flex flex-col">
-                        <span className="text-sm font-bold text-slate-200 group-hover:text-white transition-colors">{cat.name}</span>
-                        <span className="text-[10px] text-slate-500 flex items-center gap-1 font-mono">
+                      <div className="flex flex-col min-w-0">
+                        <span className="text-sm font-bold text-slate-200 group-hover:text-white transition-colors truncate">{cat.name}</span>
+                        <span className="text-[10px] text-slate-500 flex items-center gap-1 font-mono truncate">
                           <Shield className="h-2 w-2" />
                           {cat.staff_roles && cat.staff_roles.length > 0 ? `${cat.staff_roles.length} Staff Roles` : 'Global Staff'}
                         </span>

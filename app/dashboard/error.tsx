@@ -33,25 +33,31 @@ export default function DashboardError({
   }, [error]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] p-6 text-center animate-in fade-in zoom-in-95 duration-500">
+    <div className="flex flex-col items-center justify-center min-h-[60vh] px-4 py-10 text-center animate-in fade-in zoom-in-95 duration-500">
       <div className="h-20 w-20 bg-blue-500/10 rounded-3xl flex items-center justify-center mb-6">
         <AlertTriangle className="h-10 w-10 text-blue-500" />
       </div>
       
-      <h2 className="text-2xl font-black text-white mb-2 tracking-tight">System Fault Detected</h2>
-      <p className="text-slate-400 max-w-md mb-8">
+      <h2 className="text-xl sm:text-2xl font-black text-white mb-2 tracking-tight">System Fault Detected</h2>
+      <p className="text-slate-400 max-w-md mb-4 text-sm sm:text-base leading-relaxed">
         The neural link experienced an unexpected interruption. This could be due to a connection timeout or an internal API failure.
       </p>
 
-      <div className="flex flex-col sm:flex-row gap-4 w-full max-w-xs">
+      {error?.message && (
+        <div className="mb-6 w-full max-w-md break-words rounded-xl border border-blue-500/20 bg-blue-500/5 px-4 py-3 text-xs font-mono text-blue-300">
+          {error.message}
+        </div>
+      )}
+
+      <div className="flex flex-col sm:flex-row gap-3 w-full max-w-xs sm:max-w-md">
         <Button 
           onClick={() => reset()}
-          className="flex-1 gap-2 h-12 font-bold"
+          className="w-full sm:flex-1 gap-2 h-12 font-bold"
         >
           <RefreshCw className="h-4 w-4" />
           Retry Connection
         </Button>
-        <Link href="/dashboard" className="flex-1">
+        <Link href="/dashboard" className="w-full sm:flex-1">
           <Button 
             variant="outline"
             className="w-full gap-2 h-12 font-bold border-slate-800"

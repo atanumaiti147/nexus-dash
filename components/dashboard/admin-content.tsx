@@ -200,7 +200,7 @@ export function AdminContent() {
       )}
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-6">
         {statItems.map((stat) => (
           <Card key={stat.name} className="p-4 sm:p-6 hover:border-white/10 transition-all group">
             <div className="flex items-center justify-between mb-3 sm:mb-4">

@@ -88,7 +88,7 @@ export function VanityRoleForm({ initialSetups, channels, roles, guildId }: Vani
         <h3 className="text-xl font-bold text-white mb-6">Active Vanity Roles</h3>
         
         {setups.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-10 text-slate-500">
+          <div className="flex flex-col items-center justify-center py-6 sm:py-10 text-slate-500">
             <Link2 className="h-12 w-12 mb-4 opacity-50 bg-slate-800 p-2 rounded-xl" />
             <p>No vanity roles configured yet.</p>
           </div>

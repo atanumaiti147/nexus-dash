@@ -1,452 +1,216 @@
-/**
- * ╔══════════════════════════════════════════════════════════════════╗
- * ║                                                                  ║
- * ║   █▄░█░█▀▀░█░█░█░█░█▀▀                                           ║
- * ║   █░▀█░█▀▀░▄▀▄░█░█░▀▀█                                           ║
- * ║   ▀░░▀░▀▀▀░▀░▀░▀▀▀░▀▀▀                                           ║
- * ║                                                                  ║
- * ║                © 2026 Nexus — All Rights Reserved                ║
- * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/JEqXrAurYz                     ║
- * ║   youtube  ──  https://youtube.com/@Nexus                        ║
- * ║   github   ──  https://github.com/RayExo                         ║
- * ║                                                                  ║
- * ╚══════════════════════════════════════════════════════════════════╝
- */
-
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
-import { 
-  ShieldCheck, 
-  Zap, 
-  BarChart4, 
-  MessageSquare, 
-  ChevronRight, 
-  LayoutDashboard,
-  LogIn,
-  Layers,
-  Sparkles,
-  Bot,
-  Activity,
-  History,
-  CheckCircle2,
-  ShieldAlert,
-  Globe,
-  Terminal,
-  Cpu,
-  Users2,
-  Lock,
-  Radio,
-  Gamepad2,
-  Music4,
-  User
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { Menu, X, Settings2, Music, ShieldCheck, LifeBuoy, LayoutDashboard, Bot } from "lucide-react";
 
-export default function LandingPage() {
+const INVITE_URL =
+  "https://discord.com/oauth2/authorize?client_id=1496506004169560217&permissions=8&integration_type=0&scope=bot";
+const SUPPORT_URL = "https://discord.gg/UgezfCusdj";
+const VOTE_URL = "https://top.gg/bot/1496506004169560217/vote";
+const SHOWCASE_IMG = "https://i.postimg.cc/jSRd0PfW/Screenshot-2026-04-23-145653.png";
+
+const FEATURES = [
+  { title: "Optimization", icon: Settings2, text: "With fast and customizable settings specific to your server, NexusBot gives you a musical pleasure to the fullest." },
+  { title: "Universal", icon: Music, text: "A bot that supports multi-platform music playback (Spotify, SoundCloud, YouTube). It complies with all copyrights and licenses." },
+  { title: "Security", icon: ShieldCheck, text: "An open source safe bot that you can browse and help us develop." },
+  { title: "Support", icon: LifeBuoy, text: "With our best teammates, we provide the fastest response to anyone who needs help." },
+];
+
+const NAV = [
+  { name: "Home", href: "#home" },
+  { name: "Commands", href: "/docs" },
+  { name: "Support", href: SUPPORT_URL, external: true },
+  { name: "Add Bot", href: INVITE_URL, external: true },
+];
+
+function DiscordIcon({ className }: { className?: string }) {
   return (
-    <div className="min-h-screen bg-[#020617] text-slate-200 selection:bg-blue-500/30 font-sans overflow-x-hidden">
-      {/* Dynamic Background */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-blue-500/[0.03] blur-[150px] rounded-full animate-pulse" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-blue-600/[0.03] blur-[150px] rounded-full animate-pulse [animation-delay:2s]" />
-      </div>
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.009c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+    </svg>
+  );
+}
 
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 border-b border-white/[0.03] bg-[#020617]/80 backdrop-blur-3xl transition-all duration-500">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-4 group cursor-pointer">
-            <div className="h-11 w-11 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-800 flex items-center justify-center shadow-lg shadow-blue-500/25 border border-white/20 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-              <Bot className="h-6 w-6 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <h1 className="text-lg font-bold tracking-tight text-white font-outfit leading-none">{process.env.NEXT_PUBLIC_BRAND_NAME || "Nexus"}</h1>
-              <span className="text-[9px] font-black uppercase tracking-[0.2em] text-blue-500/80 mt-1">Dashboard</span>
-            </div>
+const loginDashboard = () => signIn("discord", { callbackUrl: "/dashboard" });
+
+export default function Index() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <div className="relative min-h-screen bg-[#020617] text-slate-200 overflow-x-hidden">
+      {/* Top glow */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[480px] bg-gradient-to-b from-blue-600/25 to-transparent" />
+
+      {/* Header */}
+      <header className="relative z-20 border-b border-white/5 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-6 min-w-0">
+            <Link href="/" className="flex items-center gap-3 shrink-0">
+              <img src="/img/logo2.png" alt="NexusBot" width={44} height={44} className="rounded-full" />
+              <span className="text-xl font-semibold text-white">
+                <span className="text-blue-400">Nexus</span>Bot
+              </span>
+            </Link>
+            <nav className="hidden lg:flex items-center gap-6">
+              {NAV.map((item) =>
+                item.external ? (
+                  <a key={item.name} href={item.href} target="_blank" rel="noopener noreferrer" className="text-white/75 hover:text-white font-medium transition-colors">
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link key={item.name} href={item.href} className="text-white/75 hover:text-white font-medium transition-colors">
+                    {item.name}
+                  </Link>
+                )
+              )}
+            </nav>
           </div>
 
-          <div className="hidden lg:flex items-center gap-10 text-[11px] font-black uppercase tracking-widest text-slate-500">
-            <Link href="#features" className="hover:text-blue-500 transition-colors">Features</Link>
-            <Link href="#architecture" className="hover:text-blue-500 transition-colors">Architecture</Link>
-            <Link href="#modules" className="hover:text-blue-500 transition-colors">Modules</Link>
-            <Link href="#network" className="hover:text-blue-500 transition-colors">Network</Link>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <Button 
-              onClick={() => signIn('discord', { callbackUrl: '/dashboard' })}
-              className="rounded-xl px-7 h-11 font-black uppercase tracking-widest text-[10px] gap-2.5 shadow-2xl shadow-blue-500/20 hover:scale-[1.05] active:scale-95 transition-all bg-gradient-to-r from-blue-500 to-blue-700 border-none"
+          <div className="flex items-center gap-2">
+            <button
+              onClick={loginDashboard}
+              className="hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-white bg-gradient-to-r from-blue-600 to-blue-500 shadow-lg shadow-blue-600/20 hover:opacity-80 transition"
             >
-              <LogIn className="h-3.5 w-3.5" />
-              Initialize Console
-            </Button>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <header className="relative z-10 pt-56 pb-32 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-2xl bg-blue-500/[0.03] border border-blue-500/10 text-blue-500 text-[10px] font-black uppercase tracking-[0.3em] mb-16 animate-in fade-in slide-in-from-bottom-8 duration-1000 backdrop-blur-md">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
-            </span>
-            Neural Core v2 Active • Global Shard 07
-          </div>
-          
-          <h1 className="text-4xl xs:text-5xl sm:text-7xl lg:text-[10rem] font-bold text-white tracking-tighter leading-[0.9] sm:leading-[0.8] break-words mb-12 font-outfit animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-100 uppercase">
-            Evolution <br />
-            <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-orange-500 bg-clip-text text-transparent italic font-black">Moderated.</span>
-          </h1>
-
-          <p className="text-lg md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed mb-20 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200 font-medium">
-            The hyper-performance Discord engine. 
-            Automated security, cinematic leveling, and precision tools for the world&apos;s most elite communities.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
-            <Button 
-              onClick={() => signIn('discord', { callbackUrl: '/dashboard' })}
-              className="w-full sm:w-auto rounded-2xl px-14 py-9 text-lg font-black uppercase gap-4 group shadow-[0_0_50px_rgba(59,130,246,0.2)] bg-blue-600 text-white hover:bg-blue-500 border-none transition-all hover:scale-105"
+              <LayoutDashboard className="h-4 w-4" /> Login Dashboard
+            </button>
+            <button
+              onClick={() => setMenuOpen((v) => !v)}
+              aria-label="Toggle menu"
+              className="lg:hidden p-2.5 rounded-lg text-white hover:bg-white/10"
             >
-              <LayoutDashboard className="h-6 w-6 group-hover:rotate-12 transition-transform" />
-              Open Dashboard
-            </Button>
-            <Button variant="outline" className="w-full sm:w-auto rounded-2xl px-14 py-9 text-lg font-bold border-white/5 bg-white/[0.02] backdrop-blur-3xl hover:bg-white/[0.05] gap-3 text-white transition-all">
-              Add to Server
-              <ChevronRight className="h-5 w-5 opacity-40 group-hover:translate-x-1 transition-transform" />
-            </Button>
+              {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
           </div>
         </div>
 
-        {/* Cinematic Dashboard Mockup */}
-        <div className="max-w-6xl mx-auto mt-40 relative group animate-in fade-in zoom-in-95 duration-1000 delay-500">
-           <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-transparent rounded-[60px] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-           <div className="relative bg-[#020617] border border-white/[0.05] rounded-[50px] overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.8)]">
-              {/* Fake Window Controls */}
-              <div className="h-16 border-b border-white/[0.03] flex items-center justify-between px-10 bg-white/[0.01]">
-                <div className="flex items-center gap-3">
-                  <div className="h-3 w-3 rounded-full bg-blue-500/40" />
-                  <div className="h-3 w-3 rounded-full bg-white/10" />
-                  <div className="h-3 w-3 rounded-full bg-white/5" />
-                </div>
-                <div className="px-6 py-2 rounded-2xl bg-white/[0.03] border border-white/[0.05] text-[10px] font-black text-slate-500 tracking-[0.2em] uppercase">
-                   sec.neural.core // active_node_01
-                </div>
-                <div className="w-12" />
-              </div>
-              {/* Content Placeholder with High Contrast */}
-              <div className="aspect-[16/10] p-16 flex flex-col gap-16 relative overflow-hidden bg-gradient-to-br from-[#020617] to-[#0a0f1e]">
-                <div className="flex items-center justify-between z-10 relative">
-                  <div className="space-y-6">
-                    <div className="h-12 w-64 bg-blue-500/10 rounded-[20px] border border-blue-500/20" />
-                    <div className="h-6 w-[260px] sm:w-[500px] bg-white/[0.02] rounded-xl" />
-                  </div>
-                  <div className="h-20 w-20 rounded-[30px] bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shadow-[0_0_30px_rgba(59,130,246,0.2)]">
-                    <Activity className="h-8 w-8 text-blue-500 animate-pulse" />
-                  </div>
-                </div>
-                <div className="grid grid-cols-3 gap-10 z-10">
-                  {[1, 2, 3].map(i => (
-                    <div key={i} className="h-40 bg-white/[0.02] border border-white/[0.04] rounded-[40px] p-8 space-y-6 hover:border-blue-500/20 transition-colors">
-                      <div className="h-10 w-10 rounded-2xl bg-blue-500/10 border border-blue-500/20" />
-                      <div className="h-4 w-2/3 bg-white/5 rounded-lg" />
-                      <div className="h-3 w-1/2 bg-white/[0.02] rounded-lg" />
-                    </div>
-                  ))}
-                </div>
-                {/* Visual Glow Layer */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-blue-500/[0.02] blur-[150px] pointer-events-none" />
-              </div>
-           </div>
-        </div>
+        {/* Mobile menu */}
+        {menuOpen && (
+          <div className="lg:hidden border-t border-white/10 bg-[#020617]/95 px-5 py-4 space-y-1">
+            {NAV.map((item) =>
+              item.external ? (
+                <a key={item.name} href={item.href} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="block py-3 text-white/80 hover:text-white">
+                  {item.name}
+                </a>
+              ) : (
+                <Link key={item.name} href={item.href} onClick={() => setMenuOpen(false)} className="block py-3 text-white/80 hover:text-white">
+                  {item.name}
+                </Link>
+              )
+            )}
+            <button onClick={loginDashboard} className="mt-3 w-full flex items-center justify-center gap-2 py-3 rounded-xl font-medium text-white bg-gradient-to-r from-blue-600 to-blue-500">
+              <LayoutDashboard className="h-4 w-4" /> Login Dashboard
+            </button>
+          </div>
+        )}
       </header>
 
-      {/* Grid Section */}
-      <section id="features" className="py-48 px-6 relative">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-32 gap-12 px-4">
-            <div className="max-w-3xl">
-              <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white tracking-tighter font-outfit mb-8 uppercase italic leading-none break-words">High-Scale <br /><span className="text-blue-500 not-italic">Infrastructure.</span></h2>
-              <p className="text-2xl text-slate-500 font-medium leading-relaxed">Global redundancy delivers sub-millisecond dispatch times across 20+ edge regions. Zero lag, zero downtime.</p>
-            </div>
-            <div className="flex items-center gap-10 pb-4">
-               <div className="text-right">
-                 <p className="text-[10px] font-black uppercase text-slate-600 tracking-[0.3em] mb-3">Ping Latency</p>
-                 <p className="text-3xl sm:text-5xl font-black text-blue-500 font-outfit">12ms</p>
-               </div>
-               <div className="h-16 w-[1px] bg-white/5" />
-               <div className="text-right">
-                 <p className="text-[10px] font-black uppercase text-slate-600 tracking-[0.3em] mb-3">Global Uptime</p>
-                 <p className="text-3xl sm:text-3xl sm:text-5xl font-black text-white font-outfit">99.9<span className="text-slate-700">9</span>%</p>
-               </div>
-            </div>
+      <main className="relative z-10 max-w-7xl mx-auto px-5">
+        {/* Hero */}
+        <section id="home" className="py-16 sm:py-24 text-center">
+          <div className="flex justify-center">
+            <img src="/img/bck.png" alt="" className="w-full max-w-md h-auto opacity-90" />
+          </div>
+          <h1 className="mt-6 text-2xl sm:text-4xl sm:text-6xl font-extrabold text-white tracking-tight">NexusBot</h1>
+          <p className="mt-5 max-w-2xl mx-auto text-white/60 text-base sm:text-lg leading-relaxed">
+            How about moderating your own server with NexusBot? Create your own free world and create your own playlist, experience this pleasure with the best sounds.
+          </p>
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              onClick={loginDashboard}
+              className="w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-medium text-white bg-gradient-to-r from-blue-600 to-blue-500 shadow-lg shadow-blue-600/20 hover:opacity-80 transition"
+            >
+              <LayoutDashboard className="h-5 w-5" /> Login Dashboard
+            </button>
+            <Link
+              href="/docs"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-medium text-white border border-white/15 bg-white/5 hover:bg-white/10 transition"
+            >
+              <Bot className="h-5 w-5" /> View Commands
+            </Link>
+          </div>
+        </section>
+
+        {/* Features + invite */}
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 py-16 lg:py-24">
+          <div className="lg:col-span-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">NexusBot</h2>
+            <p className="mt-3 text-white/50 leading-relaxed">
+              How about creating the best environment to relax yourself with your own emotions?
+            </p>
+            <a
+              href={INVITE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-medium text-white bg-gradient-to-r from-blue-600 to-blue-500 shadow-lg shadow-blue-600/20 hover:opacity-80 transition"
+            >
+              <DiscordIcon className="h-5 w-5" /> Invite NexusBot
+            </a>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { 
-                title: "Neuro-Security", 
-                desc: "Contextual AI analysis detects raids and token-logging attempts in real-time.", 
-                icon: ShieldCheck,
-                color: "bg-blue-500/10 border-blue-500/20 text-blue-500"
-              },
-              { 
-                title: "Edge Dispatch", 
-                desc: "Distributed command execution ensuring your commands work everywhere, instantly.", 
-                icon: Zap,
-                color: "bg-orange-500/10 border-orange-500/20 text-orange-500"
-              },
-              { 
-                title: "Leveling Engine", 
-                desc: "Premium rendered rewards with 4K rank card generation and multi-role hierarchies.", 
-                icon: BarChart4,
-                color: "bg-blue-600/10 border-blue-600/20 text-blue-600"
-              },
-              { 
-                title: "Threaded Support", 
-                desc: "High-volume ticket systems with enterprise encryption and lifetime transcripts.", 
-                icon: MessageSquare,
-                color: "bg-slate-500/10 border-slate-500/20 text-slate-400"
-              },
-              { 
-                title: "Real-time Flux", 
-                desc: "Watch server events live with zero-latency WebSocket data streaming.", 
-                icon: History,
-                color: "bg-blue-800/10 border-blue-800/20 text-blue-700"
-              },
-              { 
-                title: "Cloud Integrity", 
-                desc: "Encrypted backups of all server configurations stored in off-site neural vaults.", 
-                icon: Layers,
-                color: "bg-white/10 border-white/20 text-white"
-              }
-            ].map((feature, i) => (
-              <div key={i} className="group glass border-white/5 p-12 rounded-[50px] hover:border-blue-500/30 transition-all duration-700 relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-12 opacity-0 group-hover:opacity-5 scale-50 group-hover:scale-110 transition-all duration-1000">
-                  <feature.icon className="h-64 w-64 text-white" />
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {FEATURES.map((f) => (
+              <div key={f.title} className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 hover:border-blue-500/30 transition">
+                <div className="flex items-center gap-3">
+                  <f.icon className="h-6 w-6 text-blue-400 shrink-0" />
+                  <h3 className="text-xl font-semibold text-white">{f.title}</h3>
                 </div>
-                <div className={cn("h-20 w-20 rounded-3xl flex items-center justify-center mb-10 border transition-all duration-700 group-hover:scale-110 group-hover:rotate-6 shadow-2xl shadow-black/40", feature.color)}>
-                  <feature.icon className="h-10 w-10 shadow-lg" />
-                </div>
-                <h3 className="text-3xl font-bold text-white mb-6 tracking-tight font-outfit relative z-10">{feature.title}</h3>
-                <p className="text-slate-500 leading-relaxed font-bold relative z-10 group-hover:text-slate-400 transition-colors uppercase text-[10px] tracking-[0.2em]">{feature.desc}</p>
-                <div className="mt-8 h-[2px] w-0 bg-blue-500 group-hover:w-full transition-all duration-700" />
+                <p className="mt-3 text-white/50 leading-relaxed">{f.text}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Architecture Section */}
-      <section id="architecture" className="py-48 px-6 bg-white/[0.01]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-           <div className="space-y-12">
-              <div className="inline-flex px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-[10px] font-black uppercase tracking-[0.3em]">
-                 The Stack
-              </div>
-              <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-tighter font-outfit uppercase break-words">Neural Core <br /><span className="text-slate-600 italic">Technology.</span></h2>
-              <p className="text-xl text-slate-500 leading-relaxed font-medium">
-                Our proprietary engine is built on a custom Rust-based microkernel that handles millions of events with a footprint smaller than a typical Discord bot.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
-                 {[
-                   { icon: Terminal, title: "Custom DSL", desc: "Write advanced logic with our intuitive Nexus scripting language." },
-                   { icon: Cpu, title: "FPGA Ready", desc: "Hardware-accelerated pattern matching for instant response." },
-                   { icon: Lock, title: "Zero Trust", desc: "Every command execution is sandboxed and cryptographically verified." },
-                   { icon: Radio, title: "Low Entropy", desc: "Optimized for minimal CPU jitter and maximum reliability." }
-                 ].map((item, i) => (
-                   <div key={i} className="space-y-4 p-6 rounded-[30px] border border-white/[0.03] hover:bg-white/[0.02] transition-colors">
-                      <item.icon className="h-6 w-6 text-blue-500" />
-                      <h4 className="text-lg font-bold text-white font-outfit uppercase tracking-tight">{item.title}</h4>
-                      <p className="text-sm text-slate-600 font-bold leading-relaxed">{item.desc}</p>
-                   </div>
-                 ))}
-              </div>
-           </div>
-           <div className="relative aspect-square flex items-center justify-center group">
-              <div className="absolute inset-0 bg-blue-500/5 blur-[120px] rounded-full animate-pulse" />
-              <div className="h-[80%] w-[80%] border-2 border-white/[0.05] rounded-full animate-[spin_60s_linear_infinite] flex items-center justify-center relative">
-                 <div className="absolute top-0 left-1/2 -translate-x-1/2 h-4 w-4 rounded-full bg-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.5)]" />
-                 <div className="h-[70%] w-[70%] border border-white/[0.05] rounded-full animate-[spin_40s_linear_infinite_reverse] flex items-center justify-center">
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-3 w-3 rounded-full bg-white/20 shadow-[0_0_20px_rgba(255,255,255,0.2)]" />
-                    <div className="h-[60%] w-[60%] border border-white/[0.05] rounded-full animate-[spin_20s_linear_infinite] flex items-center justify-center">
-                       <Bot className="h-20 w-20 text-blue-500/40 group-hover:text-blue-500 transition-all duration-700 group-hover:scale-125" />
-                    </div>
-                 </div>
-              </div>
-           </div>
-        </div>
-      </section>
-
-      {/* Modules Grid */}
-      <section id="modules" className="py-48 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-32 space-y-6">
-             <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white tracking-tighter font-outfit uppercase break-words">The Matrix <br /><span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent italic">Complete.</span></h2>
-             <p className="text-2xl text-slate-500 max-w-3xl mx-auto font-medium lowercase">Every module you need. Redefined for the modern era.</p>
+        {/* Showcase */}
+        <section className="my-14 lg:my-24 flex flex-col lg:flex-row items-center gap-8 rounded-3xl border border-white/5 bg-gradient-to-br from-slate-900/90 to-slate-900/40 p-6 sm:p-10 shadow-xl">
+          <div className="text-center lg:text-left flex-1 min-w-0">
+            <h2 className="text-3xl font-semibold text-white">Best Your Bot</h2>
+            <p className="mt-4 text-white/60 leading-relaxed">
+              Are you ready to throw the best parties with NexusBot, the best and most up-to-date bot?
+            </p>
+            <button
+              onClick={loginDashboard}
+              className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-white bg-gradient-to-r from-blue-600 to-blue-500 hover:opacity-80 transition"
+            >
+              <LayoutDashboard className="h-4 w-4" /> Open Dashboard
+            </button>
           </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {[
-              { name: "Anti-Nuke", desc: "Absolute server lockdown.", icon: ShieldAlert },
-              { name: "Verification", desc: "Bot-free onboarding.", icon: CheckCircle2 },
-              { name: "Welcome", desc: "Cinematic entries.", icon: Sparkles },
-              { name: "Vanity Roles", desc: "Custom server identity.", icon: Gamepad2 },
-              { name: "Auto Role", desc: "Instant rank assignment.", icon: User },
-              { name: "Join to Create", desc: "Self-service voice channels.", icon: Music4 },
-              { name: "Tracking", desc: "Predictive user metrics.", icon: Activity },
-              { name: "Invites", desc: "Advanced growth tracking.", icon: Globe },
-              { name: "Custom Roles", desc: "User-defined permissions.", icon: Lock },
-              { name: "Reaction Roles", desc: "Interactive role menus.", icon: Layers },
-              { name: "Tickets", desc: "Support at lightspeed.", icon: MessageSquare },
-              { name: "Join DM", desc: "Personalized welcomes.", icon: MessageSquare }
-            ].map((mod, i) => (
-              <div key={i} className="group p-8 rounded-[40px] bg-white/[0.01] border border-white/[0.03] hover:bg-blue-500/[0.02] hover:border-blue-500/20 transition-all duration-500">
-                 <div className="h-14 w-14 rounded-2xl bg-white/[0.03] flex items-center justify-center mb-6 group-hover:bg-blue-500/10 transition-colors">
-                    <mod.icon className="h-6 w-6 text-slate-600 group-hover:text-blue-500 transition-colors" />
-                 </div>
-                 <h4 className="text-xl font-bold text-white font-outfit mb-2 tracking-tight">{mod.name}</h4>
-                 <p className="text-xs text-slate-600 font-bold uppercase tracking-widest">{mod.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Network / Global Section */}
-      <section id="network" className="py-48 px-6 bg-blue-600/[0.01] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10">
-           <div className="flex flex-col lg:flex-row items-center gap-24">
-              <div className="flex-1 space-y-12">
-                 <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white tracking-tighter font-outfit uppercase break-words">Global <br /><span className="text-blue-500">Reach.</span></h2>
-                  <p className="text-2xl text-slate-500 leading-relaxed font-medium">
-                    Powering servers with over 12 million combined users. Our network spans every continent, bringing your community closer together.
-                  </p>
-                 <div className="space-y-8">
-                    {[
-                      { stat: "12M+", label: "Users Protected" },
-                      { stat: "24", label: "Edge Clusters" },
-                      { stat: "5.2K", label: "Verified Communities" }
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-center gap-8">
-                         <div className="text-3xl sm:text-3xl sm:text-5xl font-black text-white font-outfit">{item.stat}</div>
-                         <div className="h-[1px] flex-1 bg-white/5" />
-                         <div className="text-[11px] font-black uppercase text-blue-500 tracking-[0.3em]">{item.label}</div>
-                      </div>
-                    ))}
-                 </div>
-              </div>
-              <div className="flex-1 relative group">
-                 <div className="absolute inset-0 bg-blue-500/10 blur-[150px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-                 <div className="aspect-square bg-[#020617] border border-white/[0.05] rounded-[60px] p-12 relative overflow-hidden flex items-center justify-center">
-                    <Globe className="h-64 w-64 text-blue-500/10 animate-pulse" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                       <div className="h-32 w-32 bg-blue-500/20 blur-[60px] rounded-full" />
-                    </div>
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 space-y-12">
-                       <Bot className="h-20 w-20 text-blue-500 shadow-[0_0_50px_rgba(59,130,246,0.5)] bg-[#020617] rounded-3xl p-4 border border-blue-500/50" />
-                    </div>
-                 </div>
-              </div>
-           </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-48 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-24">
-             <h2 className="text-3xl sm:text-5xl md:text-6xl font-black text-white font-outfit tracking-tighter uppercase mb-6 break-words">Knowledge Base</h2>
-             <p className="text-slate-600 font-bold uppercase tracking-widest text-xs">Frequently Asked Questions</p>
-          </div>
-          <div className="space-y-6">
-            {[
-              { q: "Is the Nexus Engine free to use?", a: "The core engine is 100% free for all communities. We offer premium clusters for ultra-high-scale enterprise servers." },
-              { q: "How secure is my server data?", a: "Every byte of configuration data is AES-256 encrypted at rest. We never store personal user data beyond Discord's standard requirements." },
-              { q: "Can I migrate from other bots?", a: "Yes, our Migration Matrix tool allows you to import leveling and configuration data from most popular bots in minutes." },
-              { q: "What is the 'Neural Core'?", a: "It's our advanced event-processing architecture that uses predictive analysis to moderate raids before they escalate." }
-            ].map((item, i) => (
-              <div key={i} className="p-10 rounded-[40px] border border-white/[0.03] hover:border-white/10 transition-all bg-white/[0.01] group">
-                 <h4 className="text-xl font-bold text-white mb-6 font-outfit uppercase tracking-tight flex items-center gap-4">
-                    <div className="h-2 w-2 rounded-full bg-blue-500 opacity-20 group-hover:opacity-100 transition-all" />
-                    {item.q}
-                 </h4>
-                 <p className="text-slate-500 font-bold leading-relaxed">{item.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-48 px-6">
-        <div className="max-w-6xl mx-auto relative rounded-[80px] p-24 md:p-32 overflow-hidden bg-gradient-to-br from-blue-600 to-blue-900 text-center shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
-           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
-           <div className="relative z-10">
-              <h2 className="text-4xl sm:text-7xl md:text-[9rem] font-bold text-white tracking-tighter font-outfit mb-12 uppercase leading-[0.9] sm:leading-[0.8] italic break-words">Ready to <br />Evolve?</h2>
-              <p className="text-2xl text-white/70 max-w-3xl mx-auto mb-20 font-medium">Join 5,000+ communities scaling their automation with the Nexus Engine. Setup takes less than 30 seconds.</p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-8 tracking-widest uppercase text-xs font-black">
-                <Button 
-                  onClick={() => signIn('discord', { callbackUrl: '/dashboard' })}
-                  className="w-full sm:w-auto rounded-3xl px-16 py-10 bg-white text-black hover:bg-slate-100 border-none shadow-[0_20px_50px_rgba(0,0,0,0.4)] font-black text-lg transition-transform hover:scale-105 active:scale-95"
-                >
-                  Get Started Free
-                </Button>
-                <div className="flex items-center gap-3 text-white">
-                   <div className="h-3 w-3 rounded-full bg-white animate-pulse" />
-                   Neural Uplink: Stable
-                </div>
-              </div>
-           </div>
-        </div>
-      </section>
+          <img src={SHOWCASE_IMG} alt="NexusBot dashboard preview" className="w-full max-w-md rounded-xl shadow-2xl shadow-black" />
+        </section>
+      </main>
 
       {/* Footer */}
-      <footer className="py-32 border-t border-white/[0.03] bg-[#020617] relative z-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-20 mb-32">
-            <div className="col-span-1 md:col-span-2 space-y-12">
-              <div className="flex items-center gap-4 group">
-                <span className="text-3xl font-bold text-white font-outfit uppercase tracking-tighter">{process.env.NEXT_PUBLIC_BRAND_NAME || "Nexus"} Engine</span>
-              </div>
-              <p className="text-slate-600 max-w-sm font-bold leading-relaxed uppercase text-xs tracking-widest">
-                The high-performance Discord engine for communities that demand excellence. Open-source, secure, and infinitely scalable.
-              </p>
+      <footer className="relative z-10 border-t border-white/5 mt-10">
+        <div className="max-w-7xl mx-auto px-5 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div>
+            <div className="flex items-center gap-3">
+              <img src="/img/logo2.png" alt="" width={40} height={40} className="rounded-full" />
+              <span className="font-semibold text-xl text-white">NexusBot</span>
             </div>
-            <div className="space-y-8">
-               <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-white opacity-40">System</h4>
-               <ul className="space-y-5 text-[11px] font-black uppercase tracking-widest text-slate-500">
-                  <li><Link href="#" className="hover:text-blue-500 transition-colors">GitHub Repository</Link></li>
-                  <li><Link href="/docs" className="hover:text-blue-500 transition-colors">Documentation</Link></li>
-                  <li><Link href="#" className="hover:text-blue-500 transition-colors">API References</Link></li>
-               </ul>
-            </div>
-            <div className="space-y-8">
-               <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-white opacity-40">Identity</h4>
-               <ul className="space-y-5 text-[11px] font-black uppercase tracking-widest text-slate-500">
-                  <li><Link href="/privacy" className="hover:text-blue-500 transition-colors">Privacy Shield</Link></li>
-                  <li><Link href="/terms" className="hover:text-blue-500 transition-colors">Terms of Service</Link></li>
-                  <li><Link href="#" className="hover:text-blue-500 transition-colors">Discord Server</Link></li>
-               </ul>
-            </div>
+            <p className="mt-4 text-white/40 text-sm">Powered by Nexus Development</p>
           </div>
-          <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 opacity-40">
-            <p className="text-slate-700 text-[10px] font-black uppercase tracking-[0.4em]">
-              © 2026 {process.env.NEXT_PUBLIC_BRAND_NAME || "Nexus"} Development // Advanced Neural Infrastructure.
-            </p>
-            <div className="flex items-center gap-8">
-               <div className="flex items-center gap-3 text-[10px] font-black text-blue-500 uppercase tracking-[0.3em]">
-                  <div className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
-                  All Nodes Operational
-               </div>
-            </div>
+
+          <div>
+            <p className="text-white font-medium mb-3">Important</p>
+            <ul className="space-y-2 text-white/50">
+              <li><Link href="/terms" className="hover:text-white hover:underline">Terms Of Service</Link></li>
+              <li><Link href="/privacy" className="hover:text-white hover:underline">Privacy Policy</Link></li>
+              <li><a href={VOTE_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white hover:underline">Vote Bot</a></li>
+            </ul>
           </div>
+
+          <div>
+            <p className="text-white font-medium mb-3">Links</p>
+            <ul className="space-y-2 text-white/50">
+              <li><Link href="/docs" className="hover:text-white hover:underline">Commands</Link></li>
+              <li><a href={SUPPORT_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white hover:underline">Support Server</a></li>
+              <li><button onClick={loginDashboard} className="hover:text-white hover:underline">Dashboard</button></li>
+            </ul>
+          </div>
+        </div>
+        <div className="border-t border-white/5 py-5 text-center text-white/40 text-sm">
+          {new Date().getFullYear()} &copy; NexusBot · Bot Online
         </div>
       </footer>
     </div>
