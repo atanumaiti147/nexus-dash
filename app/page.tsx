@@ -162,13 +162,21 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Showcase Image Only */}
-        <section className="my-14 lg:my-24 w-full">
-          <img
-            src={SHOWCASE_IMG}
-            alt="NexusBot showcase"
-            className="block w-full h-auto rounded-2xl shadow-2xl shadow-black"
-          />
+        {/* Showcase */}
+        <section className="my-14 lg:my-24 flex flex-col lg:flex-row items-center gap-8 rounded-3xl border border-white/5 bg-gradient-to-br from-slate-900/90 to-slate-900/40 p-6 sm:p-10 shadow-xl">
+          <div className="text-center lg:text-left flex-1 min-w-0">
+            <h2 className="text-3xl font-semibold text-white">Best Your Bot</h2>
+            <p className="mt-4 text-white/60 leading-relaxed">
+              Are you ready to throw the best parties with NexusBot, the best and most up-to-date bot?
+            </p>
+            <button
+              onClick={loginDashboard}
+              className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-white bg-gradient-to-r from-blue-600 to-blue-500 hover:opacity-80 transition"
+            >
+              <LayoutDashboard className="h-4 w-4" /> Open Dashboard
+            </button>
+          </div>
+          <img src={SHOWCASE_IMG} alt="NexusBot dashboard preview" className="w-full max-w-md rounded-xl shadow-2xl shadow-black" />
         </section>
       </main>
 
